@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://geo.amazonaws.com/schemas/geofence",
+  "title": "Amazon Location Service Geofence",
+  "description": "Schema representing an Amazon Location Service geofence resource.",
+  "type": "object",
+  "required": [
+    "GeofenceId",
+    "Geometry"
+  ],
+  "properties": {
+    "GeofenceId": {
+      "type": "string",
+      "description": "The identifier for the geofence.",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[-._\\p{L}\\p{N}]+$"
+    },
+    "Geometry": {
+      "type": "object",
+      "description": "The geofence geometry.",
+      "properties": {
+        "Polygon": {
+          "type": "array",
+          "description": "A polygon geometry represented as an array of linear rings.",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "minItems": 4
+          },
+          "minItems": 1
+        },
+        "Circle": {
+          "type": "object",
+          "description": "A circle geometry defined by center and radius.",
+          "required": [
+            "Center",
+            "Radius"
+          ],
+          "properties": {
+            "Center": {
+              "type": "array",
+              "description": "The center of the circle as [longitude, latitude].",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "Radius": {
+              "type": "number",
+              "description": "The radius of the circle in meters.",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "Status": {
+      "type": "string",
+      "description": "The status of the geofence.",
+      "enum": [
+        "ACTIVE",
+        "PENDING"
+      ]
+    },
+    "CreateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The timestamp for when the geofence was created."
+    },
+    "UpdateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The timestamp for when the geofence was last updated."
+    },
+    "GeofenceProperties": {
+      "type": "object",
+      "description": "Key-value pairs of geofence properties.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "Tag": {
+      "type": "object",
+      "required": [
+        "Key",
+        "Value"
+      ],
+      "properties": {
+        "Key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "Value": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 256
+        }
+      }
+    }
+  }
+}

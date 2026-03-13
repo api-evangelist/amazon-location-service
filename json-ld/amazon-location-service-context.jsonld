@@ -1,0 +1,91 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "geo": "https://docs.aws.amazon.com/location/latest/APIReference/",
+    "aws": "https://aws.amazon.com/",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "identifier": "schema:identifier",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "status": "schema:status",
+    "provider": {
+      "@id": "schema:provider",
+      "@type": "schema:Organization"
+    },
+    "Map": {
+      "@id": "geo:API_CreateMap.html",
+      "@context": {
+        "MapName": "schema:name",
+        "MapArn": "schema:identifier",
+        "Description": "schema:description",
+        "Configuration": "geo:Configuration",
+        "CreateTime": "schema:dateCreated",
+        "UpdateTime": "schema:dateModified"
+      }
+    },
+    "PlaceIndex": {
+      "@id": "geo:API_CreatePlaceIndex.html",
+      "@context": {
+        "IndexName": "schema:name",
+        "IndexArn": "schema:identifier",
+        "Description": "schema:description",
+        "DataSource": "geo:DataSource",
+        "CreateTime": "schema:dateCreated",
+        "UpdateTime": "schema:dateModified"
+      }
+    },
+    "GeofenceCollection": {
+      "@id": "geo:API_CreateGeofenceCollection.html",
+      "@context": {
+        "CollectionName": "schema:name",
+        "CollectionArn": "schema:identifier",
+        "Description": "schema:description",
+        "CreateTime": "schema:dateCreated",
+        "UpdateTime": "schema:dateModified"
+      }
+    },
+    "Tracker": {
+      "@id": "geo:API_CreateTracker.html",
+      "@context": {
+        "TrackerName": "schema:name",
+        "TrackerArn": "schema:identifier",
+        "Description": "schema:description",
+        "CreateTime": "schema:dateCreated",
+        "UpdateTime": "schema:dateModified"
+      }
+    },
+    "RouteCalculator": {
+      "@id": "geo:API_CreateRouteCalculator.html",
+      "@context": {
+        "CalculatorName": "schema:name",
+        "CalculatorArn": "schema:identifier",
+        "Description": "schema:description",
+        "DataSource": "geo:DataSource",
+        "CreateTime": "schema:dateCreated",
+        "UpdateTime": "schema:dateModified"
+      }
+    },
+    "Place": {
+      "@id": "geo:API_SearchPlaceIndexForText.html",
+      "@context": {
+        "Label": "schema:name",
+        "AddressNumber": "schema:streetAddress",
+        "Street": "schema:streetAddress",
+        "Municipality": "schema:addressLocality",
+        "Region": "schema:addressRegion",
+        "Country": "schema:addressCountry",
+        "PostalCode": "schema:postalCode",
+        "Geometry": "schema:geo"
+      }
+    },
+    "Tag": {
+      "@id": "geo:Tag",
+      "@context": {
+        "Key": "schema:name",
+        "Value": "schema:value"
+      }
+    }
+  }
+}
