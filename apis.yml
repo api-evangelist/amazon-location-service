@@ -3,7 +3,7 @@ description: Amazon Location Service provides location-based services including 
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/location/
 created: '2024-01-15'
-modified: '2026-03-13'
+modified: '2026-03-16'
 apis:
 - name: Amazon Location Service REST API
   description: RESTful API for Amazon Location Service operations including maps, places, routes, geofences, trackers, and device position management for location-aware applications.
