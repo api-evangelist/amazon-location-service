@@ -40,7 +40,7 @@ paths:
   /maps:
     post:
       operationId: CreateMap
-      summary: Create a map resource
+      summary: Amazon Location Service Create a map resource
       description: Creates a map resource in your AWS account for rendering maps.
       tags:
         - Maps
@@ -77,7 +77,7 @@ paths:
   /places/v0/indexes:
     post:
       operationId: CreatePlaceIndex
-      summary: Create a place index resource
+      summary: Amazon Location Service Create a place index resource
       description: Creates a place index resource for geocoding and reverse geocoding.
       tags:
         - Places
@@ -103,7 +103,7 @@ paths:
   /places/v0/indexes/{IndexName}/search/text:
     post:
       operationId: SearchPlaceIndexForText
-      summary: Search for places by text
+      summary: Amazon Location Service Search for places by text
       description: Geocodes free-form text to a place or address.
       tags:
         - Places
@@ -136,7 +136,7 @@ paths:
   /geofencing/v0/collections:
     post:
       operationId: CreateGeofenceCollection
-      summary: Create a geofence collection
+      summary: Amazon Location Service Create a geofence collection
       description: Creates a geofence collection for managing and storing geofences.
       tags:
         - Geofencing
@@ -159,7 +159,7 @@ paths:
   /tracking/v0/trackers:
     post:
       operationId: CreateTracker
-      summary: Create a tracker resource
+      summary: Amazon Location Service Create a tracker resource
       description: Creates a tracker resource for receiving and storing device position updates.
       tags:
         - Trackers
@@ -182,7 +182,7 @@ paths:
   /routes/v0/calculators:
     post:
       operationId: CreateRouteCalculator
-      summary: Create a route calculator
+      summary: Amazon Location Service Create a route calculator
       description: Creates a route calculator resource for calculating routes.
       tags:
         - Routes
