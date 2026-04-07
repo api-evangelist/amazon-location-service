@@ -249,3 +249,9 @@ components:
       description: AWS Signature Version 4 authentication.
 security:
   - aws_sig_v4: []
+tags:
+  - name: Geofencing
+  - name: Maps
+  - name: Places
+  - name: Routes
+  - name: Trackers
