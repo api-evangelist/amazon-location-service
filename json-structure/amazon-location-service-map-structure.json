@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-location-service/refs/heads/main/json-structure/amazon-location-service-map-structure.json",
+  "name": "MapResource",
+  "description": "An Amazon Location Service map resource.",
+  "type": "object",
+  "properties": {
+    "MapName": {
+      "type": "string",
+      "description": "The name of the map resource.",
+      "example": "my-map"
+    },
+    "MapArn": {
+      "type": "string",
+      "description": "The Amazon Resource Name (ARN) for the map resource."
+    },
+    "DataSource": {
+      "type": "string",
+      "description": "Specifies the map data provider.",
+      "example": "HERE"
+    },
+    "Description": {
+      "type": "string",
+      "description": "An optional description for the map resource."
+    },
+    "CreateTime": {
+      "type": "datetime",
+      "description": "The timestamp for when the map resource was created."
+    },
+    "UpdateTime": {
+      "type": "datetime",
+      "description": "The timestamp for when the map resource was last updated."
+    }
+  }
+}

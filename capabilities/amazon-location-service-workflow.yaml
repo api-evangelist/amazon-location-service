@@ -1,0 +1,58 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon Location Service Workflow
+  description: Unified workflow capability for Amazon Location Service combining resource management and operations.
+  tags:
+  - Amazon Location Service
+  - AWS
+  - Workflow
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+capability:
+  consumes:
+  - import: location-service
+    location: ./shared/location-service.yaml
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: location-service-api
+    description: REST API for Amazon Location Service workflow.
+    resources: []
+  - type: mcp
+    port: 9090
+    namespace: location-service-mcp
+    transport: http
+    description: MCP server for Amazon Location Service.
+    tools:
+    - name: map-resources-create-map
+      description: Creates a map resource in your AWS account.
+      hints:
+        readOnly: false
+        idempotent: false
+      call: location-service.createmap
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: map-resources-list-maps
+      description: Lists map resources in your AWS account.
+      hints:
+        readOnly: true
+        idempotent: true
+      call: location-service.listmaps
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: map-resources-describe-map
+      description: Retrieves the map resource details.
+      hints:
+        readOnly: true
+        idempotent: true
+      call: location-service.describemap
+      outputParameters:
+      - type: object
+        mapping: $.

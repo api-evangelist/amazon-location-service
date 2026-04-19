@@ -1,35 +1,75 @@
-# Amazon Location Service API
+# Amazon Location Service (amazon-location-service)
+Amazon Location Service makes it easy for developers to add location functionality, such as maps, points of interest, geocoding, routing, geofences, and tracking to their applications, without sacrificing data security and user privacy.
 
-Amazon Location Service provides location-based services including maps, places, routes, trackers, and geofences, enabling developers to add location functionality to applications securely and cost-effectively.
+**URL:** [https://aws.amazon.com/location/](https://aws.amazon.com/location/)
+
+**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+
+## Tags:
+
+ - AWS, Location, Maps, Geospatial, Tracking
+
+## Timestamps
+
+- **Created:** 2024-01-15
+- **Modified:** 2026-04-19
 
 ## APIs
 
-- **Amazon Location Service REST API** - RESTful API for Amazon Location Service operations including maps, places, routes, geofences, trackers, and device position management for location-aware applications.
+### Amazon Location Service API
 
-## Resources
+**Human URL:** [https://aws.amazon.com/location/](https://aws.amazon.com/location/)
 
-### Documentation
-
-- [Documentation](https://docs.aws.amazon.com/location/latest/APIReference/)
-- [User Guide](https://docs.aws.amazon.com/location/latest/developerguide/welcome.html)
-- [API Reference](https://docs.aws.amazon.com/location/latest/APIReference/Welcome.html)
-- [Code Examples](https://docs.aws.amazon.com/location/latest/developerguide/samples.html)
-- [Getting Started](https://aws.amazon.com/location/getting-started/)
-
-### Specifications
+#### Properties
 
 - [OpenAPI](openapi/amazon-location-service-openapi.yml)
-- [JSON Schema](json-schema/amazon-location-service-geofence-schema.json)
-- [JSON-LD](json-ld/amazon-location-service-context.jsonld)
+- [JSONSchema](json-schema/amazon-location-service-map-schema.json)
+- [JSONSchema](json-schema/amazon-location-service-tracker-schema.json)
+- [JSONLD](json-ld/amazon-location-service-context.jsonld)
 
-### General
+## Artifacts
 
-- [Pricing](https://aws.amazon.com/location/pricing/)
-- [FAQ](https://aws.amazon.com/location/faqs/)
-- [Security](https://docs.aws.amazon.com/location/latest/developerguide/security.html)
-- [Service Level Agreement](https://aws.amazon.com/location/sla/)
-- [SDKs](https://aws.amazon.com/tools/)
+### OpenAPI
+
+- [Amazon Location Service API](openapi/amazon-location-service-openapi.yml)
+
+### JSON Schema
+
+- [Map](json-schema/amazon-location-service-map-schema.json)
+- [Tracker](json-schema/amazon-location-service-tracker-schema.json)
+
+### JSON Structure
+
+- [Map](json-structure/amazon-location-service-map-structure.json)
+- [Tracker](json-structure/amazon-location-service-tracker-structure.json)
+
+### JSON-LD
+
+- [Amazon Location Service Context](json-ld/amazon-location-service-context.jsonld)
+
+### Examples
+
+- [Map Example](examples/amazon-location-service-map-example.json)
+- [Tracker Example](examples/amazon-location-service-tracker-example.json)
+
+## Capabilities
+
+### Workflow Capabilities
+
+| Workflow | APIs Combined | Tools | Persona |
+|----------|--------------|-------|---------|
+| [Amazon Location Service Workflow](capabilities/amazon-location-service-workflow.yaml) | Location Service | 8 | Developer, Fleet Manager |
+
+## Vocabulary
+
+- [Amazon Location Service Vocabulary](vocabulary/amazon-location-service-vocabulary.yaml)
+
+## Rules
+
+- [Amazon Location Service Spectral Rules](rules/amazon-location-service-spectral-rules.yml)
 
 ## Maintainers
 
-- Kin Lane - kin@apievangelist.com
+**FN:** Kin Lane
+
+**Email:** kin@apievangelist.com

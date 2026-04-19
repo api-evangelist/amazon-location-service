@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-location-service/refs/heads/main/json-structure/amazon-location-service-tracker-structure.json",
+  "name": "Tracker",
+  "description": "An Amazon Location Service tracker resource for tracking device positions.",
+  "type": "object",
+  "properties": {
+    "TrackerName": {
+      "type": "string",
+      "description": "The name of the tracker resource.",
+      "example": "fleet-tracker"
+    },
+    "TrackerArn": {
+      "type": "string",
+      "description": "The Amazon Resource Name (ARN) for the tracker."
+    },
+    "Description": {
+      "type": "string",
+      "description": "The optional description for the tracker resource."
+    },
+    "PositionFiltering": {
+      "type": "string",
+      "description": "The position filtering method of the tracker resource.",
+      "example": "TimeBased",
+      "enum": [
+        "TimeBased",
+        "DistanceBased",
+        "AccuracyBased"
+      ]
+    },
+    "CreateTime": {
+      "type": "datetime",
+      "description": "The timestamp for when the tracker resource was created."
+    }
+  }
+}

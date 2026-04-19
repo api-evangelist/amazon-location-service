@@ -1,0 +1,7 @@
+{
+  "TrackerName": "fleet-tracker",
+  "TrackerArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "Description": "example-value",
+  "PositionFiltering": "TimeBased",
+  "CreateTime": "2025-03-15T14:30:00Z"
+}

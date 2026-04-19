@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon Location Service
+  description: Amazon Location Service API for managing location service resources.
+  tags:
+  - Amazon Location Service
+  - AWS
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: location-service
+    baseUri: https://geo.us-east-1.amazonaws.com
+    description: Amazon Location Service service.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{AWS_ACCESS_KEY_ID}}'
+      placement: header
+    resources:
+    - name: map-resources
+      path: /maps
+      description: Map resource management
+      operations:
+      - name: createmap
+        method: POST
+        description: Creates a map resource in your AWS account.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: listmaps
+        method: GET
+        description: Lists map resources in your AWS account.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: describemap
+        method: GET
+        description: Retrieves the map resource details.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8101
+    namespace: location-service-rest
+    resources: []
+  - type: mcp
+    port: 9101
+    namespace: location-service-mcp
+    transport: http
+    tools:
+    - name: createmap
+      description: Creates a map resource in your AWS account.
+      hints:
+        readOnly: false
+        idempotent: false
+      call: location-service.createmap
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listmaps
+      description: Lists map resources in your AWS account.
+      hints:
+        readOnly: true
+        idempotent: true
+      call: location-service.listmaps
+      outputParameters:
+      - type: object
+        mapping: $.
