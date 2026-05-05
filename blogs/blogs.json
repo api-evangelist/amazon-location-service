@@ -1,0 +1,13 @@
+{
+  "repo": "amazon-location-service",
+  "feeds": [
+    {
+      "source": "https://aws.amazon.com/blogs/mobile/",
+      "feed_url": "https://aws.amazon.com/blogs/mobile/feed/",
+      "saved": 10,
+      "title": "Front-End Web & Mobile"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:21:32Z"
+}
