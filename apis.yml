@@ -1,13 +1,14 @@
 name: Amazon Location Service
-description: Amazon Location Service provides location-based services including maps, places, routes, trackers, and geofences, enabling developers to add location functionality to applications 
-  securely and cost-effectively.
+description: Amazon Location Service provides location-based services including maps, places, routes, trackers, and geofences,
+  enabling developers to add location functionality to applications securely and cost-effectively.
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/location/
 created: '2024-01-15'
-modified: '2026-04-19'
+modified: '2026-05-19'
 apis:
 - name: Amazon Location Service REST API
-  description: RESTful API for Amazon Location Service operations including maps, places, routes, geofences, trackers, and device position management for location-aware applications.
+  description: RESTful API for Amazon Location Service operations including maps, places, routes, geofences, trackers, and
+    device position management for location-aware applications.
   image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
   humanURL: https://aws.amazon.com/location/
   baseURL: https://geo.amazonaws.com
@@ -53,6 +54,8 @@ apis:
     url: json-schema/amazon-location-service-map-schema.json
   - type: JSONSchema
     url: json-schema/amazon-location-service-tracker-schema.json
+  - type: NaftikoCapability
+    url: capabilities/amazon-location-service-maps.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/
@@ -124,8 +127,6 @@ common:
     description: Access Esri basemaps and location data through Amazon Location Service.
 - type: SpectralRules
   url: rules/amazon-location-service-spectral-rules.yml
-- type: NaftikoCapability
-  url: capabilities/amazon-location-service-workflow.yaml
 - type: Vocabulary
   url: vocabulary/amazon-location-service-vocabulary.yaml
 maintainers:
