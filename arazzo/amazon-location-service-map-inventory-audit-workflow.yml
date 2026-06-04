@@ -1,0 +1,72 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Location Service Map Inventory Audit
+  summary: List all map resources and pull full detail on the first entry.
+  description: >-
+    Audits the map resources in an AWS account by listing every map and then
+    describing the first entry returned to capture its data source, ARN, and
+    timestamps. Serves as the building block for inventory and compliance
+    reporting over Amazon Location Service map resources. Every step spells out
+    its request inline so the audit can be read and executed without opening the
+    underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: locationApi
+  url: ../openapi/amazon-location-service-openapi.yml
+  type: openapi
+workflows:
+- workflowId: map-inventory-audit
+  summary: List maps and describe the first one for a detailed audit record.
+  description: >-
+    Retrieves the full list of map resources and then describes the first
+    entry, returning the inventory list alongside the detailed record for that
+    map.
+  inputs:
+    type: object
+    properties:
+      MaxResults:
+        type: integer
+        description: Optional maximum number of map entries to return in the list.
+      NextToken:
+        type: string
+        description: Optional pagination token from a previous list call.
+  steps:
+  - stepId: listMaps
+    description: >-
+      List the map resources in the account, optionally paginating through the
+      results.
+    operationId: ListMaps
+    requestBody:
+      contentType: application/json
+      payload:
+        MaxResults: $inputs.MaxResults
+        NextToken: $inputs.NextToken
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      entries: $response.body#/Entries
+      firstMapName: $response.body#/Entries/0/MapName
+      nextToken: $response.body#/NextToken
+  - stepId: describeFirstMap
+    description: >-
+      Describe the first map in the inventory to capture its full detail for the
+      audit record.
+    operationId: DescribeMap
+    parameters:
+    - name: MapName
+      in: path
+      value: $steps.listMaps.outputs.firstMapName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      mapName: $response.body#/MapName
+      mapArn: $response.body#/MapArn
+      dataSource: $response.body#/DataSource
+      createTime: $response.body#/CreateTime
+      updateTime: $response.body#/UpdateTime
+  outputs:
+    entries: $steps.listMaps.outputs.entries
+    nextToken: $steps.listMaps.outputs.nextToken
+    auditedMapName: $steps.describeFirstMap.outputs.mapName
+    auditedMapArn: $steps.describeFirstMap.outputs.mapArn
+    auditedDataSource: $steps.describeFirstMap.outputs.dataSource

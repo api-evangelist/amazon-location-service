@@ -1,0 +1,138 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Location Service Find or Create Tracker and Report Position
+  summary: Reuse a tracker if it exists, else create it, then push a position.
+  description: >-
+    An idempotent fleet-onboarding pattern. The workflow lists the trackers in
+    the account, branches on whether the requested tracker already exists, and
+    in either case ends up uploading a device position update to the tracker.
+    When the tracker is missing it is created first. Every step spells out its
+    request inline so the flow can be read and executed without opening the
+    underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: locationApi
+  url: ../openapi/amazon-location-service-openapi.yml
+  type: openapi
+workflows:
+- workflowId: find-or-create-tracker
+  summary: Ensure a tracker exists and then report a device position to it.
+  description: >-
+    Lists trackers and branches: when the named tracker is already present a
+    device position is reported directly to it; when it is missing the tracker
+    is created first and then seeded with the device position.
+  inputs:
+    type: object
+    required:
+    - TrackerName
+    - DeviceId
+    - Longitude
+    - Latitude
+    - SampleTime
+    properties:
+      TrackerName:
+        type: string
+        description: The tracker resource name to find or create.
+      PositionFiltering:
+        type: string
+        description: Position filtering method applied only when creating the tracker.
+      DeviceId:
+        type: string
+        description: The identifier of the device whose position is being uploaded.
+      Longitude:
+        type: number
+        description: The longitude coordinate of the device position.
+      Latitude:
+        type: number
+        description: The latitude coordinate of the device position.
+      SampleTime:
+        type: string
+        description: ISO-8601 timestamp for when the position was sampled.
+  steps:
+  - stepId: listTrackers
+    description: >-
+      List the trackers in the account to detect whether the requested tracker
+      already exists.
+    operationId: ListTrackers
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      entries: $response.body#/Entries
+    onSuccess:
+    - name: trackerExists
+      type: goto
+      stepId: reportToExisting
+      criteria:
+      - context: $response.body
+        condition: $.Entries[?(@.TrackerName == '$inputs.TrackerName')]
+        type: jsonpath
+    - name: trackerMissing
+      type: goto
+      stepId: createTracker
+      criteria:
+      - context: $response.body
+        condition: $.Entries[?(@.TrackerName == '$inputs.TrackerName')].length == 0
+        type: jsonpath
+  - stepId: reportToExisting
+    description: >-
+      Upload the device position to the already-existing tracker.
+    operationId: BatchUpdateDevicePosition
+    parameters:
+    - name: TrackerName
+      in: path
+      value: $inputs.TrackerName
+    requestBody:
+      contentType: application/json
+      payload:
+        Updates:
+        - DeviceId: $inputs.DeviceId
+          Position:
+          - $inputs.Longitude
+          - $inputs.Latitude
+          SampleTime: $inputs.SampleTime
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      errors: $response.body#/Errors
+    onSuccess:
+    - name: reported
+      type: end
+  - stepId: createTracker
+    description: >-
+      Create the tracker because no existing tracker matched the requested name.
+    operationId: CreateTracker
+    requestBody:
+      contentType: application/json
+      payload:
+        TrackerName: $inputs.TrackerName
+        PositionFiltering: $inputs.PositionFiltering
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      trackerName: $response.body#/TrackerName
+      trackerArn: $response.body#/TrackerArn
+  - stepId: reportToNew
+    description: >-
+      Seed the newly created tracker with the supplied device position.
+    operationId: BatchUpdateDevicePosition
+    parameters:
+    - name: TrackerName
+      in: path
+      value: $steps.createTracker.outputs.trackerName
+    requestBody:
+      contentType: application/json
+      payload:
+        Updates:
+        - DeviceId: $inputs.DeviceId
+          Position:
+          - $inputs.Longitude
+          - $inputs.Latitude
+          SampleTime: $inputs.SampleTime
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      errors: $response.body#/Errors
+  outputs:
+    trackerName: $steps.createTracker.outputs.trackerName
+    existingReportErrors: $steps.reportToExisting.outputs.errors
+    newReportErrors: $steps.reportToNew.outputs.errors

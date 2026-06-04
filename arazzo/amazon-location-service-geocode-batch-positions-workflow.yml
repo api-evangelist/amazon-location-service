@@ -1,0 +1,109 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Location Service Geocode Address into Tracker Position
+  summary: Geocode text to coordinates and record them as a device position.
+  description: >-
+    Resolves a free-form address to coordinates using the place index search and
+    then records those coordinates against a tracker as a device position. This
+    bridges geocoding and device tracking so an address can be turned directly
+    into a logged position for a device. Every step spells out its request inline
+    so the flow can be read and executed without opening the underlying OpenAPI
+    description.
+  version: 1.0.0
+sourceDescriptions:
+- name: locationApi
+  url: ../openapi/amazon-location-service-openapi.yml
+  type: openapi
+workflows:
+- workflowId: geocode-batch-positions
+  summary: Geocode an address and upload the result as a tracker position.
+  description: >-
+    Geocodes the supplied text to a coordinate via the place index, ensures a
+    tracker exists by creating it, and uploads the geocoded coordinate to the
+    tracker as a device position so the address becomes a logged location.
+  inputs:
+    type: object
+    required:
+    - IndexName
+    - Text
+    - TrackerName
+    - DeviceId
+    - SampleTime
+    properties:
+      IndexName:
+        type: string
+        description: The name of the place index resource to query.
+      Text:
+        type: string
+        description: The free-form address or place name to geocode.
+      TrackerName:
+        type: string
+        description: The tracker resource that will receive the geocoded position.
+      PositionFiltering:
+        type: string
+        description: Position filtering method for the tracker.
+      DeviceId:
+        type: string
+        description: The identifier of the device the position is recorded against.
+      SampleTime:
+        type: string
+        description: ISO-8601 timestamp for when the position was sampled.
+  steps:
+  - stepId: geocodeText
+    description: >-
+      Geocode the supplied address to resolve the longitude/latitude point of
+      the top matching place.
+    operationId: SearchPlaceIndexForText
+    parameters:
+    - name: IndexName
+      in: path
+      value: $inputs.IndexName
+    requestBody:
+      contentType: application/json
+      payload:
+        Text: $inputs.Text
+        MaxResults: 1
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      topPosition: $response.body#/Results/0/Place/Geometry/Point
+      topLabel: $response.body#/Results/0/Place/Label
+  - stepId: createTracker
+    description: >-
+      Create the tracker resource that will store the geocoded position.
+    operationId: CreateTracker
+    requestBody:
+      contentType: application/json
+      payload:
+        TrackerName: $inputs.TrackerName
+        PositionFiltering: $inputs.PositionFiltering
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      trackerName: $response.body#/TrackerName
+      trackerArn: $response.body#/TrackerArn
+  - stepId: recordPosition
+    description: >-
+      Upload the geocoded coordinate to the tracker as a device position for the
+      supplied device.
+    operationId: BatchUpdateDevicePosition
+    parameters:
+    - name: TrackerName
+      in: path
+      value: $steps.createTracker.outputs.trackerName
+    requestBody:
+      contentType: application/json
+      payload:
+        Updates:
+        - DeviceId: $inputs.DeviceId
+          Position: $steps.geocodeText.outputs.topPosition
+          SampleTime: $inputs.SampleTime
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      errors: $response.body#/Errors
+  outputs:
+    geocodedLabel: $steps.geocodeText.outputs.topLabel
+    geocodedPosition: $steps.geocodeText.outputs.topPosition
+    trackerName: $steps.createTracker.outputs.trackerName
+    recordErrors: $steps.recordPosition.outputs.errors

@@ -1,0 +1,99 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Location Service Provision Tracker and Update Position
+  summary: Create a tracker then push an initial device position update to it.
+  description: >-
+    Stands up an Amazon Location Service tracker resource and immediately
+    uploads a device position so the tracker has live data, then lists trackers
+    to confirm the new resource is registered in the account. Every step spells
+    out its request inline so the provisioning flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: locationApi
+  url: ../openapi/amazon-location-service-openapi.yml
+  type: openapi
+workflows:
+- workflowId: provision-tracker
+  summary: Create a tracker, seed it with a position, and confirm it is listed.
+  description: >-
+    Creates a tracker with the supplied name and position-filtering method,
+    uploads an initial device position via a batch update, and then lists
+    trackers to verify the resource is present.
+  inputs:
+    type: object
+    required:
+    - TrackerName
+    - DeviceId
+    - Longitude
+    - Latitude
+    - SampleTime
+    properties:
+      TrackerName:
+        type: string
+        description: The name to assign to the new tracker resource.
+      PositionFiltering:
+        type: string
+        description: Position filtering method (TimeBased, DistanceBased, or AccuracyBased).
+      DeviceId:
+        type: string
+        description: The identifier of the device whose position is being uploaded.
+      Longitude:
+        type: number
+        description: The longitude coordinate of the device position.
+      Latitude:
+        type: number
+        description: The latitude coordinate of the device position.
+      SampleTime:
+        type: string
+        description: ISO-8601 timestamp for when the position was sampled.
+  steps:
+  - stepId: createTracker
+    description: >-
+      Create the tracker resource using the supplied name and position-filtering
+      method.
+    operationId: CreateTracker
+    requestBody:
+      contentType: application/json
+      payload:
+        TrackerName: $inputs.TrackerName
+        PositionFiltering: $inputs.PositionFiltering
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      trackerName: $response.body#/TrackerName
+      trackerArn: $response.body#/TrackerArn
+      createTime: $response.body#/CreateTime
+  - stepId: updatePosition
+    description: >-
+      Upload an initial device position to the new tracker via a batch update.
+    operationId: BatchUpdateDevicePosition
+    parameters:
+    - name: TrackerName
+      in: path
+      value: $steps.createTracker.outputs.trackerName
+    requestBody:
+      contentType: application/json
+      payload:
+        Updates:
+        - DeviceId: $inputs.DeviceId
+          Position:
+          - $inputs.Longitude
+          - $inputs.Latitude
+          SampleTime: $inputs.SampleTime
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      errors: $response.body#/Errors
+  - stepId: listTrackers
+    description: >-
+      List trackers in the account to confirm the new tracker is registered.
+    operationId: ListTrackers
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      entries: $response.body#/Entries
+  outputs:
+    trackerName: $steps.createTracker.outputs.trackerName
+    trackerArn: $steps.createTracker.outputs.trackerArn
+    updateErrors: $steps.updatePosition.outputs.errors

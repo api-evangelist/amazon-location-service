@@ -1,0 +1,102 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Location Service Geocode Address and Provision Map
+  summary: Geocode free-form text and stand up a map to render the result.
+  description: >-
+    Geocodes a free-form address or place name with the place index search, then
+    provisions a map resource that a client application can use to render the
+    geocoded coordinates, finally describing the map to confirm it is ready.
+    Every step spells out its request inline so the flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: locationApi
+  url: ../openapi/amazon-location-service-openapi.yml
+  type: openapi
+workflows:
+- workflowId: geocode-and-map
+  summary: Geocode text, create a map to render it, and verify the map.
+  description: >-
+    Searches a place index for free-form text to resolve coordinates, creates a
+    map styled for rendering those results, and describes the map to confirm it
+    is provisioned and ready for embedding.
+  inputs:
+    type: object
+    required:
+    - IndexName
+    - Text
+    - MapName
+    - Style
+    properties:
+      IndexName:
+        type: string
+        description: The name of the place index resource to query.
+      Text:
+        type: string
+        description: The free-form address, name, city, or region to geocode.
+      MaxResults:
+        type: integer
+        description: Optional maximum number of geocoding results to return.
+      MapName:
+        type: string
+        description: The name to assign to the map resource that renders the result.
+      Style:
+        type: string
+        description: The map style to render (e.g. VectorEsriStreets).
+  steps:
+  - stepId: geocodeText
+    description: >-
+      Geocode the supplied free-form text against the place index to resolve a
+      set of candidate places with coordinates.
+    operationId: SearchPlaceIndexForText
+    parameters:
+    - name: IndexName
+      in: path
+      value: $inputs.IndexName
+    requestBody:
+      contentType: application/json
+      payload:
+        Text: $inputs.Text
+        MaxResults: $inputs.MaxResults
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      results: $response.body#/Results
+      topPlaceLabel: $response.body#/Results/0/Place/Label
+      topPosition: $response.body#/Results/0/Place/Geometry/Point
+      dataSource: $response.body#/Summary/DataSource
+  - stepId: createMap
+    description: >-
+      Create a map resource styled to render the geocoded result for a client
+      application.
+    operationId: CreateMap
+    requestBody:
+      contentType: application/json
+      payload:
+        MapName: $inputs.MapName
+        Configuration:
+          Style: $inputs.Style
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      mapName: $response.body#/MapName
+      mapArn: $response.body#/MapArn
+  - stepId: describeMap
+    description: >-
+      Describe the new map to confirm it is provisioned and ready to embed.
+    operationId: DescribeMap
+    parameters:
+    - name: MapName
+      in: path
+      value: $steps.createMap.outputs.mapName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      mapName: $response.body#/MapName
+      mapDataSource: $response.body#/DataSource
+  outputs:
+    topPlaceLabel: $steps.geocodeText.outputs.topPlaceLabel
+    topPosition: $steps.geocodeText.outputs.topPosition
+    results: $steps.geocodeText.outputs.results
+    mapName: $steps.describeMap.outputs.mapName
+    mapArn: $steps.createMap.outputs.mapArn

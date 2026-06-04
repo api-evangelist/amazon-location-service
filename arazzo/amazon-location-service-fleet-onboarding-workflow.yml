@@ -1,0 +1,115 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Location Service Fleet Onboarding
+  summary: Provision a map and a tracker, then report a first device position.
+  description: >-
+    A full fleet-tracking onboarding flow that pairs the two resources a
+    location-aware application needs: it creates a map for visualization and a
+    tracker for device positions, then uploads the first device position so the
+    tracker has live data the moment it is wired into a map. Every step spells
+    out its request inline so the onboarding flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: locationApi
+  url: ../openapi/amazon-location-service-openapi.yml
+  type: openapi
+workflows:
+- workflowId: fleet-onboarding
+  summary: Create a map and tracker and seed the tracker with a device position.
+  description: >-
+    Provisions a map resource for rendering, a tracker resource for device
+    positions, and then uploads an initial device position to the tracker,
+    returning the identifiers of both new resources.
+  inputs:
+    type: object
+    required:
+    - MapName
+    - Style
+    - TrackerName
+    - DeviceId
+    - Longitude
+    - Latitude
+    - SampleTime
+    properties:
+      MapName:
+        type: string
+        description: The name to assign to the new map resource.
+      Style:
+        type: string
+        description: The map style to render (e.g. VectorEsriStreets).
+      TrackerName:
+        type: string
+        description: The name to assign to the new tracker resource.
+      PositionFiltering:
+        type: string
+        description: Position filtering method for the tracker.
+      DeviceId:
+        type: string
+        description: The identifier of the device whose position is being uploaded.
+      Longitude:
+        type: number
+        description: The longitude coordinate of the device position.
+      Latitude:
+        type: number
+        description: The latitude coordinate of the device position.
+      SampleTime:
+        type: string
+        description: ISO-8601 timestamp for when the position was sampled.
+  steps:
+  - stepId: createMap
+    description: >-
+      Create the map resource used to visualize device positions for the fleet.
+    operationId: CreateMap
+    requestBody:
+      contentType: application/json
+      payload:
+        MapName: $inputs.MapName
+        Configuration:
+          Style: $inputs.Style
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      mapName: $response.body#/MapName
+      mapArn: $response.body#/MapArn
+  - stepId: createTracker
+    description: >-
+      Create the tracker resource that will hold device positions for the fleet.
+    operationId: CreateTracker
+    requestBody:
+      contentType: application/json
+      payload:
+        TrackerName: $inputs.TrackerName
+        PositionFiltering: $inputs.PositionFiltering
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      trackerName: $response.body#/TrackerName
+      trackerArn: $response.body#/TrackerArn
+  - stepId: seedPosition
+    description: >-
+      Upload the first device position to the new tracker so it has live data.
+    operationId: BatchUpdateDevicePosition
+    parameters:
+    - name: TrackerName
+      in: path
+      value: $steps.createTracker.outputs.trackerName
+    requestBody:
+      contentType: application/json
+      payload:
+        Updates:
+        - DeviceId: $inputs.DeviceId
+          Position:
+          - $inputs.Longitude
+          - $inputs.Latitude
+          SampleTime: $inputs.SampleTime
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      errors: $response.body#/Errors
+  outputs:
+    mapName: $steps.createMap.outputs.mapName
+    mapArn: $steps.createMap.outputs.mapArn
+    trackerName: $steps.createTracker.outputs.trackerName
+    trackerArn: $steps.createTracker.outputs.trackerArn
+    seedErrors: $steps.seedPosition.outputs.errors

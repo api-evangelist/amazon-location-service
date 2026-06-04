@@ -1,0 +1,80 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Location Service Provision and Verify Map
+  summary: Create a map resource and confirm it is queryable before use.
+  description: >-
+    Stands up a new Amazon Location Service map resource and then verifies it by
+    describing the freshly created map, confirming the returned name matches the
+    requested name. Every step spells out its request inline so the provisioning
+    flow can be read and executed without opening the underlying OpenAPI
+    description.
+  version: 1.0.0
+sourceDescriptions:
+- name: locationApi
+  url: ../openapi/amazon-location-service-openapi.yml
+  type: openapi
+workflows:
+- workflowId: provision-map
+  summary: Create a map resource and verify it by describing it.
+  description: >-
+    Creates a map resource from the supplied name, data source, and style, then
+    immediately describes it to confirm the resource exists and is ready to be
+    embedded in a client application.
+  inputs:
+    type: object
+    required:
+    - MapName
+    - Style
+    properties:
+      MapName:
+        type: string
+        description: The name to assign to the new map resource.
+      Style:
+        type: string
+        description: The map style to render (e.g. VectorEsriStreets, VectorHereExplore).
+      PricingPlan:
+        type: string
+        description: Optional legacy pricing plan for the map resource.
+      Description:
+        type: string
+        description: Optional human-readable description for the map resource.
+  steps:
+  - stepId: createMap
+    description: >-
+      Create the map resource using the supplied name and a configuration that
+      selects the rendering style.
+    operationId: CreateMap
+    requestBody:
+      contentType: application/json
+      payload:
+        MapName: $inputs.MapName
+        Configuration:
+          Style: $inputs.Style
+        Description: $inputs.Description
+        PricingPlan: $inputs.PricingPlan
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      mapName: $response.body#/MapName
+      mapArn: $response.body#/MapArn
+      createTime: $response.body#/CreateTime
+  - stepId: describeMap
+    description: >-
+      Describe the newly created map to confirm it exists and to read back its
+      data source and timestamps.
+    operationId: DescribeMap
+    parameters:
+    - name: MapName
+      in: path
+      value: $steps.createMap.outputs.mapName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      mapName: $response.body#/MapName
+      dataSource: $response.body#/DataSource
+      mapArn: $response.body#/MapArn
+      updateTime: $response.body#/UpdateTime
+  outputs:
+    mapName: $steps.describeMap.outputs.mapName
+    mapArn: $steps.describeMap.outputs.mapArn
+    dataSource: $steps.describeMap.outputs.dataSource

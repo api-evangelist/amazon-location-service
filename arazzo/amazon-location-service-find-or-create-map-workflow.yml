@@ -1,0 +1,101 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Location Service Find or Create Map
+  summary: Reuse an existing map by name if present, otherwise create it.
+  description: >-
+    An idempotent provisioning pattern for Amazon Location Service map
+    resources. The workflow lists the maps in the account, branches on whether a
+    map with the requested name already exists, and either describes the
+    existing map or creates a new one. Every step spells out its request inline
+    so the flow can be read and executed without opening the underlying OpenAPI
+    description.
+  version: 1.0.0
+sourceDescriptions:
+- name: locationApi
+  url: ../openapi/amazon-location-service-openapi.yml
+  type: openapi
+workflows:
+- workflowId: find-or-create-map
+  summary: Ensure a map with the given name exists, creating it only if missing.
+  description: >-
+    Lists existing maps, and when a map with the supplied name is already
+    present it is described and reused; otherwise a new map is created with the
+    requested style.
+  inputs:
+    type: object
+    required:
+    - MapName
+    - Style
+    properties:
+      MapName:
+        type: string
+        description: The desired map resource name to find or create.
+      Style:
+        type: string
+        description: The map style to render when a new map must be created.
+      Description:
+        type: string
+        description: Optional description applied only when creating a new map.
+  steps:
+  - stepId: listMaps
+    description: >-
+      List the map resources in the account so the flow can detect whether the
+      requested map already exists.
+    operationId: ListMaps
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      entries: $response.body#/Entries
+    onSuccess:
+    - name: mapExists
+      type: goto
+      stepId: describeExisting
+      criteria:
+      - context: $response.body
+        condition: $.Entries[?(@.MapName == '$inputs.MapName')]
+        type: jsonpath
+    - name: mapMissing
+      type: goto
+      stepId: createMap
+      criteria:
+      - context: $response.body
+        condition: $.Entries[?(@.MapName == '$inputs.MapName')].length == 0
+        type: jsonpath
+  - stepId: describeExisting
+    description: >-
+      Describe the already-existing map and return its details for reuse.
+    operationId: DescribeMap
+    parameters:
+    - name: MapName
+      in: path
+      value: $inputs.MapName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      mapName: $response.body#/MapName
+      mapArn: $response.body#/MapArn
+      dataSource: $response.body#/DataSource
+    onSuccess:
+    - name: reused
+      type: end
+  - stepId: createMap
+    description: >-
+      Create a new map with the requested name and style because no existing
+      map matched.
+    operationId: CreateMap
+    requestBody:
+      contentType: application/json
+      payload:
+        MapName: $inputs.MapName
+        Configuration:
+          Style: $inputs.Style
+        Description: $inputs.Description
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      mapName: $response.body#/MapName
+      mapArn: $response.body#/MapArn
+  outputs:
+    mapName: $steps.describeExisting.outputs.mapName
+    createdMapName: $steps.createMap.outputs.mapName
+    mapArn: $steps.createMap.outputs.mapArn
