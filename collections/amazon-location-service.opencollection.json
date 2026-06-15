@@ -1,0 +1,146 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Location Service API",
+    "version": "2024-01-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Maps",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Location Service List Maps",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://geo.us-east-1.amazonaws.com/maps"
+          },
+          "docs": "Lists map resources in your AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon Location Service Create Map",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://geo.us-east-1.amazonaws.com/maps"
+          },
+          "docs": "Creates a map resource in your AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon Location Service Describe Map",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://geo.us-east-1.amazonaws.com/maps/:MapName",
+            "params": [
+              {
+                "name": "MapName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the map resource."
+              }
+            ]
+          },
+          "docs": "Retrieves the map resource details."
+        },
+        {
+          "info": {
+            "name": "Amazon Location Service Delete Map",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://geo.us-east-1.amazonaws.com/maps/:MapName",
+            "params": [
+              {
+                "name": "MapName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the map resource."
+              }
+            ]
+          },
+          "docs": "Deletes a map resource from your AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon Location Service List Trackers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://geo.us-east-1.amazonaws.com/tracking/v0/trackers"
+          },
+          "docs": "Lists tracker resources in your AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon Location Service Create Tracker",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://geo.us-east-1.amazonaws.com/tracking/v0/trackers"
+          },
+          "docs": "Creates a tracker resource in your AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon Location Service Batch Update Device Position",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://geo.us-east-1.amazonaws.com/tracking/v0/trackers/:TrackerName/positions",
+            "params": [
+              {
+                "name": "TrackerName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the tracker."
+              }
+            ]
+          },
+          "docs": "Uploads position update data for one or more devices to a tracker resource."
+        },
+        {
+          "info": {
+            "name": "Amazon Location Service Search Place Index for Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://geo.us-east-1.amazonaws.com/places/v0/indexes/:IndexName/search/text",
+            "params": [
+              {
+                "name": "IndexName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the place index resource."
+              }
+            ]
+          },
+          "docs": "Geocodes free-form text, such as an address, name, city, or region."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

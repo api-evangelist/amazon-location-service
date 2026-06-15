@@ -1,0 +1,1608 @@
+{
+  "info": {
+    "_postman_id": "d1459b45-8f4b-4cf1-af48-ce339b033f0f",
+    "name": "Amazon Location Service API",
+    "description": "The Amazon Location Service API provides programmatic access to manage Location Service resources.\n\nContact Support:\n Name: AWS Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:04:37.000Z",
+    "updatedAt": "2026-06-05T15:04:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d1459b45-8f4b-4cf1-af48-ce339b033f0f"
+  },
+  "item": [
+    {
+      "name": "maps",
+      "item": [
+        {
+          "name": "{MapName}",
+          "item": [
+            {
+              "name": "Amazon Location Service Describe Map",
+              "id": "85fc7cda-90f8-447b-909d-375aea161bfd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/maps/:MapName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "maps",
+                    ":MapName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "ff700896-f4f9-454f-ba56-69039d74f755",
+                      "key": "MapName",
+                      "value": "<string>",
+                      "description": "(Required) The name of the map resource."
+                    }
+                  ]
+                },
+                "description": "Retrieves the map resource details."
+              },
+              "response": [
+                {
+                  "id": "e1ebaeb8-fe44-4bc2-82b9-b653d3b0aa04",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/maps/:MapName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "maps",
+                        ":MapName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "MapName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-e1ebaeb8-fe44-4bc2-82b9-b653d3b0aa04"
+                },
+                {
+                  "id": "78a173ac-d06d-4844-804e-9cf24b5ed06a",
+                  "name": "Bad request",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/maps/:MapName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "maps",
+                        ":MapName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "MapName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-78a173ac-d06d-4844-804e-9cf24b5ed06a"
+                },
+                {
+                  "id": "dba805f8-2f32-4ecc-8056-492824f6ea27",
+                  "name": "Access denied",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/maps/:MapName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "maps",
+                        ":MapName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "MapName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-dba805f8-2f32-4ecc-8056-492824f6ea27"
+                },
+                {
+                  "id": "d23f48c7-4f38-4006-9fe4-8e8eebf19916",
+                  "name": "Internal server error",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/maps/:MapName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "maps",
+                        ":MapName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "MapName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-d23f48c7-4f38-4006-9fe4-8e8eebf19916"
+                }
+              ],
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-85fc7cda-90f8-447b-909d-375aea161bfd"
+            },
+            {
+              "name": "Amazon Location Service Delete Map",
+              "id": "9ed8ed16-c102-4356-80cb-50826c25593e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/maps/:MapName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "maps",
+                    ":MapName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "c8509132-55a0-4472-86af-2044efa3826c",
+                      "key": "MapName",
+                      "value": "<string>",
+                      "description": "(Required) The name of the map resource."
+                    }
+                  ]
+                },
+                "description": "Deletes a map resource from your AWS account."
+              },
+              "response": [
+                {
+                  "id": "7e997073-60d1-479a-aef3-3d0ba3df3d76",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/maps/:MapName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "maps",
+                        ":MapName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "MapName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-7e997073-60d1-479a-aef3-3d0ba3df3d76"
+                },
+                {
+                  "id": "1a837057-3dda-44f8-ba0b-9638d4e41e14",
+                  "name": "Bad request",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/maps/:MapName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "maps",
+                        ":MapName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "MapName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-1a837057-3dda-44f8-ba0b-9638d4e41e14"
+                },
+                {
+                  "id": "ba5663fc-6359-43e2-b85e-520bacf2b9f1",
+                  "name": "Access denied",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/maps/:MapName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "maps",
+                        ":MapName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "MapName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-ba5663fc-6359-43e2-b85e-520bacf2b9f1"
+                },
+                {
+                  "id": "1b42b3a8-b110-47d0-a2fd-fa792b174ea4",
+                  "name": "Internal server error",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/maps/:MapName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "maps",
+                        ":MapName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "MapName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-1b42b3a8-b110-47d0-a2fd-fa792b174ea4"
+                }
+              ],
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-9ed8ed16-c102-4356-80cb-50826c25593e"
+            }
+          ],
+          "id": "0c77a7db-d27c-4d21-b636-7c324d626810",
+          "createdAt": "2026-06-05T15:04:38.000Z",
+          "updatedAt": "2026-06-05T15:04:38.000Z",
+          "uid": "35240-0c77a7db-d27c-4d21-b636-7c324d626810"
+        },
+        {
+          "name": "Amazon Location Service Create Map",
+          "id": "31bb8878-1fe2-4713-8630-a529dafc9f9f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/maps",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "maps"
+              ]
+            },
+            "description": "Creates a map resource in your AWS account."
+          },
+          "response": [
+            {
+              "id": "70c6f499-6f8a-4a65-9650-e808183f8dd1",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/maps",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "maps"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-70c6f499-6f8a-4a65-9650-e808183f8dd1"
+            },
+            {
+              "id": "b0454dc7-b8ce-4916-8630-8e03eafa0d60",
+              "name": "Bad request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/maps",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "maps"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-b0454dc7-b8ce-4916-8630-8e03eafa0d60"
+            },
+            {
+              "id": "dc31573e-10d3-4851-bb4a-8947e0e82482",
+              "name": "Access denied",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/maps",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "maps"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-dc31573e-10d3-4851-bb4a-8947e0e82482"
+            },
+            {
+              "id": "61081ecc-6c32-411f-97f7-4e7a1bd80780",
+              "name": "Internal server error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/maps",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "maps"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-61081ecc-6c32-411f-97f7-4e7a1bd80780"
+            }
+          ],
+          "createdAt": "2026-06-05T15:04:38.000Z",
+          "updatedAt": "2026-06-05T15:04:38.000Z",
+          "uid": "35240-31bb8878-1fe2-4713-8630-a529dafc9f9f"
+        },
+        {
+          "name": "Amazon Location Service List Maps",
+          "id": "4c5a79af-9f90-4d2a-85a0-c65f73a59458",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/maps",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "maps"
+              ]
+            },
+            "description": "Lists map resources in your AWS account."
+          },
+          "response": [
+            {
+              "id": "7295d6ee-8db0-42c2-ad53-1b08ffb75305",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/maps",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "maps"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-7295d6ee-8db0-42c2-ad53-1b08ffb75305"
+            },
+            {
+              "id": "ab9956b3-3787-4e22-87fe-175dcd88e9b7",
+              "name": "Bad request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/maps",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "maps"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-ab9956b3-3787-4e22-87fe-175dcd88e9b7"
+            },
+            {
+              "id": "89b4a3d8-e5b3-4a42-ae45-7f38b045a6d5",
+              "name": "Access denied",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/maps",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "maps"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-89b4a3d8-e5b3-4a42-ae45-7f38b045a6d5"
+            },
+            {
+              "id": "9e608d44-de11-442b-b9b4-ccef527ed38b",
+              "name": "Internal server error",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/maps",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "maps"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-9e608d44-de11-442b-b9b4-ccef527ed38b"
+            }
+          ],
+          "createdAt": "2026-06-05T15:04:38.000Z",
+          "updatedAt": "2026-06-05T15:04:38.000Z",
+          "uid": "35240-4c5a79af-9f90-4d2a-85a0-c65f73a59458"
+        }
+      ],
+      "id": "c6052d43-a4d1-4ab8-8bd5-c20122ccaace",
+      "createdAt": "2026-06-05T15:04:38.000Z",
+      "updatedAt": "2026-06-05T15:04:38.000Z",
+      "uid": "35240-c6052d43-a4d1-4ab8-8bd5-c20122ccaace"
+    },
+    {
+      "name": "tracking",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "trackers",
+              "item": [
+                {
+                  "name": "{TrackerName}",
+                  "item": [
+                    {
+                      "name": "positions",
+                      "item": [
+                        {
+                          "name": "Amazon Location Service Batch Update Device Position",
+                          "id": "6ca522e8-1c38-420e-88c0-f181f0d530ba",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/tracking/v0/trackers/:TrackerName/positions",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "tracking",
+                                "v0",
+                                "trackers",
+                                ":TrackerName",
+                                "positions"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "47d6baca-e6be-4112-95da-83bee9b6151b",
+                                  "key": "TrackerName",
+                                  "value": "<string>",
+                                  "description": "(Required) The name of the tracker."
+                                }
+                              ]
+                            },
+                            "description": "Uploads position update data for one or more devices to a tracker resource."
+                          },
+                          "response": [
+                            {
+                              "id": "31091c6d-02e8-4de4-8a14-4cf039e50509",
+                              "name": "Success",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/tracking/v0/trackers/:TrackerName/positions",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "tracking",
+                                    "v0",
+                                    "trackers",
+                                    ":TrackerName",
+                                    "positions"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "TrackerName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-06-05T15:04:38.000Z",
+                              "updatedAt": "2026-06-05T15:04:38.000Z",
+                              "uid": "35240-31091c6d-02e8-4de4-8a14-4cf039e50509"
+                            },
+                            {
+                              "id": "a4110628-b58a-4ee1-a7e1-e9c3038a984d",
+                              "name": "Bad request",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/tracking/v0/trackers/:TrackerName/positions",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "tracking",
+                                    "v0",
+                                    "trackers",
+                                    ":TrackerName",
+                                    "positions"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "TrackerName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-06-05T15:04:38.000Z",
+                              "updatedAt": "2026-06-05T15:04:38.000Z",
+                              "uid": "35240-a4110628-b58a-4ee1-a7e1-e9c3038a984d"
+                            },
+                            {
+                              "id": "2fab1a99-4cdb-4b02-b0c5-363544e87bbd",
+                              "name": "Access denied",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/tracking/v0/trackers/:TrackerName/positions",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "tracking",
+                                    "v0",
+                                    "trackers",
+                                    ":TrackerName",
+                                    "positions"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "TrackerName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Forbidden",
+                              "code": 403,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-06-05T15:04:38.000Z",
+                              "updatedAt": "2026-06-05T15:04:38.000Z",
+                              "uid": "35240-2fab1a99-4cdb-4b02-b0c5-363544e87bbd"
+                            },
+                            {
+                              "id": "a4c90d31-6d6b-4754-a5c3-219f9605e17f",
+                              "name": "Internal server error",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Authorization",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/tracking/v0/trackers/:TrackerName/positions",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "tracking",
+                                    "v0",
+                                    "trackers",
+                                    ":TrackerName",
+                                    "positions"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "TrackerName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-06-05T15:04:38.000Z",
+                              "updatedAt": "2026-06-05T15:04:38.000Z",
+                              "uid": "35240-a4c90d31-6d6b-4754-a5c3-219f9605e17f"
+                            }
+                          ],
+                          "createdAt": "2026-06-05T15:04:38.000Z",
+                          "updatedAt": "2026-06-05T15:04:38.000Z",
+                          "uid": "35240-6ca522e8-1c38-420e-88c0-f181f0d530ba"
+                        }
+                      ],
+                      "id": "5a037c4c-9649-4cbb-a728-fa7e1fb443c8",
+                      "createdAt": "2026-06-05T15:04:38.000Z",
+                      "updatedAt": "2026-06-05T15:04:38.000Z",
+                      "uid": "35240-5a037c4c-9649-4cbb-a728-fa7e1fb443c8"
+                    }
+                  ],
+                  "id": "c5fd83bf-775b-478e-87e6-891cf2e2902d",
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-c5fd83bf-775b-478e-87e6-891cf2e2902d"
+                },
+                {
+                  "name": "Amazon Location Service Create Tracker",
+                  "id": "0d84f7a5-ce30-4424-91de-e066e6325960",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/tracking/v0/trackers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tracking",
+                        "v0",
+                        "trackers"
+                      ]
+                    },
+                    "description": "Creates a tracker resource in your AWS account."
+                  },
+                  "response": [
+                    {
+                      "id": "14277f9c-2236-471a-80e6-4c4d2211d54d",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/tracking/v0/trackers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "tracking",
+                            "v0",
+                            "trackers"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:04:38.000Z",
+                      "updatedAt": "2026-06-05T15:04:38.000Z",
+                      "uid": "35240-14277f9c-2236-471a-80e6-4c4d2211d54d"
+                    },
+                    {
+                      "id": "e6b43d90-0cfb-48e3-8313-d73932a70492",
+                      "name": "Bad request",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/tracking/v0/trackers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "tracking",
+                            "v0",
+                            "trackers"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:04:38.000Z",
+                      "updatedAt": "2026-06-05T15:04:38.000Z",
+                      "uid": "35240-e6b43d90-0cfb-48e3-8313-d73932a70492"
+                    },
+                    {
+                      "id": "847329cc-cfd6-474e-a96f-de872bbe5939",
+                      "name": "Access denied",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/tracking/v0/trackers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "tracking",
+                            "v0",
+                            "trackers"
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:04:38.000Z",
+                      "updatedAt": "2026-06-05T15:04:38.000Z",
+                      "uid": "35240-847329cc-cfd6-474e-a96f-de872bbe5939"
+                    },
+                    {
+                      "id": "1c3295d3-e991-4b7d-a1f8-5db88251aa74",
+                      "name": "Internal server error",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/tracking/v0/trackers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "tracking",
+                            "v0",
+                            "trackers"
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:04:38.000Z",
+                      "updatedAt": "2026-06-05T15:04:38.000Z",
+                      "uid": "35240-1c3295d3-e991-4b7d-a1f8-5db88251aa74"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-0d84f7a5-ce30-4424-91de-e066e6325960"
+                },
+                {
+                  "name": "Amazon Location Service List Trackers",
+                  "id": "43a5a62e-409b-486e-8d04-a46154bf90b1",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/tracking/v0/trackers",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tracking",
+                        "v0",
+                        "trackers"
+                      ]
+                    },
+                    "description": "Lists tracker resources in your AWS account."
+                  },
+                  "response": [
+                    {
+                      "id": "b5ea1897-cafd-4f67-ac24-a80e2bcbd546",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/tracking/v0/trackers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "tracking",
+                            "v0",
+                            "trackers"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:04:38.000Z",
+                      "updatedAt": "2026-06-05T15:04:38.000Z",
+                      "uid": "35240-b5ea1897-cafd-4f67-ac24-a80e2bcbd546"
+                    },
+                    {
+                      "id": "5e97488a-4f2c-4183-9e1d-c53ad16dc922",
+                      "name": "Bad request",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/tracking/v0/trackers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "tracking",
+                            "v0",
+                            "trackers"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:04:38.000Z",
+                      "updatedAt": "2026-06-05T15:04:38.000Z",
+                      "uid": "35240-5e97488a-4f2c-4183-9e1d-c53ad16dc922"
+                    },
+                    {
+                      "id": "61348bb9-af93-420c-889c-cf58bb9346ad",
+                      "name": "Access denied",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/tracking/v0/trackers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "tracking",
+                            "v0",
+                            "trackers"
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:04:38.000Z",
+                      "updatedAt": "2026-06-05T15:04:38.000Z",
+                      "uid": "35240-61348bb9-af93-420c-889c-cf58bb9346ad"
+                    },
+                    {
+                      "id": "fdad7510-5df0-4601-94f3-9259fc12384a",
+                      "name": "Internal server error",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/tracking/v0/trackers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "tracking",
+                            "v0",
+                            "trackers"
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:04:38.000Z",
+                      "updatedAt": "2026-06-05T15:04:38.000Z",
+                      "uid": "35240-fdad7510-5df0-4601-94f3-9259fc12384a"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-43a5a62e-409b-486e-8d04-a46154bf90b1"
+                }
+              ],
+              "id": "f80e1a76-7f06-4bb9-80bb-3a64ac7391d8",
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-f80e1a76-7f06-4bb9-80bb-3a64ac7391d8"
+            }
+          ],
+          "id": "57bb7924-5fa4-41ce-b7b3-85d7d6618066",
+          "createdAt": "2026-06-05T15:04:38.000Z",
+          "updatedAt": "2026-06-05T15:04:38.000Z",
+          "uid": "35240-57bb7924-5fa4-41ce-b7b3-85d7d6618066"
+        }
+      ],
+      "id": "721769b0-ac05-4c1a-89a6-dfdf1c7ce657",
+      "createdAt": "2026-06-05T15:04:38.000Z",
+      "updatedAt": "2026-06-05T15:04:38.000Z",
+      "uid": "35240-721769b0-ac05-4c1a-89a6-dfdf1c7ce657"
+    },
+    {
+      "name": "places",
+      "item": [
+        {
+          "name": "v0",
+          "item": [
+            {
+              "name": "indexes",
+              "item": [
+                {
+                  "name": "{IndexName}",
+                  "item": [
+                    {
+                      "name": "search",
+                      "item": [
+                        {
+                          "name": "text",
+                          "item": [
+                            {
+                              "name": "Amazon Location Service Search Place Index for Text",
+                              "id": "53a37e75-4082-4921-89ea-878d62e1464e",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/places/v0/indexes/:IndexName/search/text",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "places",
+                                    "v0",
+                                    "indexes",
+                                    ":IndexName",
+                                    "search",
+                                    "text"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "9c25a762-1e8f-448d-82a8-94fe62ec9456",
+                                      "key": "IndexName",
+                                      "value": "<string>",
+                                      "description": "(Required) The name of the place index resource."
+                                    }
+                                  ]
+                                },
+                                "description": "Geocodes free-form text, such as an address, name, city, or region."
+                              },
+                              "response": [
+                                {
+                                  "id": "5f80da6b-bf83-4c4e-818e-d479f81b30e7",
+                                  "name": "Success",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Authorization",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/places/v0/indexes/:IndexName/search/text",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "places",
+                                        "v0",
+                                        "indexes",
+                                        ":IndexName",
+                                        "search",
+                                        "text"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "IndexName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-06-05T15:04:38.000Z",
+                                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                                  "uid": "35240-5f80da6b-bf83-4c4e-818e-d479f81b30e7"
+                                },
+                                {
+                                  "id": "1a931de1-ad42-4fac-8129-c9ba4d0fa35a",
+                                  "name": "Bad request",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Authorization",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/places/v0/indexes/:IndexName/search/text",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "places",
+                                        "v0",
+                                        "indexes",
+                                        ":IndexName",
+                                        "search",
+                                        "text"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "IndexName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-06-05T15:04:38.000Z",
+                                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                                  "uid": "35240-1a931de1-ad42-4fac-8129-c9ba4d0fa35a"
+                                },
+                                {
+                                  "id": "ccb50e06-2384-4205-aff3-25d04c3522e4",
+                                  "name": "Access denied",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Authorization",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/places/v0/indexes/:IndexName/search/text",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "places",
+                                        "v0",
+                                        "indexes",
+                                        ":IndexName",
+                                        "search",
+                                        "text"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "IndexName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Forbidden",
+                                  "code": 403,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-06-05T15:04:38.000Z",
+                                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                                  "uid": "35240-ccb50e06-2384-4205-aff3-25d04c3522e4"
+                                },
+                                {
+                                  "id": "88442c63-cca5-41fb-81b5-ee1e839c8863",
+                                  "name": "Internal server error",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Authorization",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/places/v0/indexes/:IndexName/search/text",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "places",
+                                        "v0",
+                                        "indexes",
+                                        ":IndexName",
+                                        "search",
+                                        "text"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "IndexName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-06-05T15:04:38.000Z",
+                                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                                  "uid": "35240-88442c63-cca5-41fb-81b5-ee1e839c8863"
+                                }
+                              ],
+                              "createdAt": "2026-06-05T15:04:38.000Z",
+                              "updatedAt": "2026-06-05T15:04:38.000Z",
+                              "uid": "35240-53a37e75-4082-4921-89ea-878d62e1464e"
+                            }
+                          ],
+                          "id": "fa4a9608-26ad-44f0-bf90-72bf426d4d8a",
+                          "createdAt": "2026-06-05T15:04:38.000Z",
+                          "updatedAt": "2026-06-05T15:04:38.000Z",
+                          "uid": "35240-fa4a9608-26ad-44f0-bf90-72bf426d4d8a"
+                        }
+                      ],
+                      "id": "1f0c53c3-fce9-417f-9b2e-4de3ad9f28d9",
+                      "createdAt": "2026-06-05T15:04:38.000Z",
+                      "updatedAt": "2026-06-05T15:04:38.000Z",
+                      "uid": "35240-1f0c53c3-fce9-417f-9b2e-4de3ad9f28d9"
+                    }
+                  ],
+                  "id": "e0ef58a1-2b78-4404-b5fb-9f1c6d74bb02",
+                  "createdAt": "2026-06-05T15:04:38.000Z",
+                  "updatedAt": "2026-06-05T15:04:38.000Z",
+                  "uid": "35240-e0ef58a1-2b78-4404-b5fb-9f1c6d74bb02"
+                }
+              ],
+              "id": "3ccb736d-ff05-456e-9ea1-298308ffe805",
+              "createdAt": "2026-06-05T15:04:38.000Z",
+              "updatedAt": "2026-06-05T15:04:38.000Z",
+              "uid": "35240-3ccb736d-ff05-456e-9ea1-298308ffe805"
+            }
+          ],
+          "id": "856dd3ed-c82e-4eec-9a2c-2c07ebf0fde4",
+          "createdAt": "2026-06-05T15:04:38.000Z",
+          "updatedAt": "2026-06-05T15:04:38.000Z",
+          "uid": "35240-856dd3ed-c82e-4eec-9a2c-2c07ebf0fde4"
+        }
+      ],
+      "id": "e045fc63-7e55-4254-b5be-a6d9e8e61cc6",
+      "createdAt": "2026-06-05T15:04:38.000Z",
+      "updatedAt": "2026-06-05T15:04:38.000Z",
+      "uid": "35240-e045fc63-7e55-4254-b5be-a6d9e8e61cc6"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://geo.us-east-1.amazonaws.com"
+    }
+  ]
+}
