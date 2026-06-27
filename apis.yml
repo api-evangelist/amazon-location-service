@@ -59,36 +59,33 @@ apis:
 common:
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-location-service/overview
-  - type: ArazzoWorkflows
-    url: arazzo/
-    workflows:
-      - url: arazzo/amazon-location-service-find-or-create-map-workflow.yml
-        name: Amazon Location Service Find or Create Map
-        summary: Reuse an existing map by name if present, otherwise create it.
-      - url: arazzo/amazon-location-service-find-or-create-tracker-workflow.yml
-        name: Amazon Location Service Find or Create Tracker and Report Position
-        summary: Reuse a tracker if it exists, else create it, then push a position.
-      - url: arazzo/amazon-location-service-fleet-onboarding-workflow.yml
-        name: Amazon Location Service Fleet Onboarding
-        summary: Provision a map and a tracker, then report a first device position.
-      - url: arazzo/amazon-location-service-geocode-and-map-workflow.yml
-        name: Amazon Location Service Geocode Address and Provision Map
-        summary: Geocode free-form text and stand up a map to render the result.
-      - url: arazzo/amazon-location-service-geocode-batch-positions-workflow.yml
-        name: Amazon Location Service Geocode Address into Tracker Position
-        summary: Geocode text to coordinates and record them as a device position.
-      - url: arazzo/amazon-location-service-map-inventory-audit-workflow.yml
-        name: Amazon Location Service Map Inventory Audit
-        summary: List all map resources and pull full detail on the first entry.
-      - url: arazzo/amazon-location-service-map-lifecycle-workflow.yml
-        name: Amazon Location Service Map Lifecycle Teardown
-        summary: Create, inspect, and delete a map resource in a single guarded flow.
-      - url: arazzo/amazon-location-service-provision-map-workflow.yml
-        name: Amazon Location Service Provision and Verify Map
-        summary: Create a map resource and confirm it is queryable before use.
-      - url: arazzo/amazon-location-service-provision-tracker-workflow.yml
-        name: Amazon Location Service Provision Tracker and Update Position
-        summary: Create a tracker then push an initial device position update to it.
+  - type: Arazzo
+    url: arazzo/amazon-location-service-find-or-create-map-workflow.yml
+    name: Amazon Location Service Find or Create Map
+  - type: Arazzo
+    url: arazzo/amazon-location-service-find-or-create-tracker-workflow.yml
+    name: Amazon Location Service Find or Create Tracker and Report Position
+  - type: Arazzo
+    url: arazzo/amazon-location-service-fleet-onboarding-workflow.yml
+    name: Amazon Location Service Fleet Onboarding
+  - type: Arazzo
+    url: arazzo/amazon-location-service-geocode-and-map-workflow.yml
+    name: Amazon Location Service Geocode Address and Provision Map
+  - type: Arazzo
+    url: arazzo/amazon-location-service-geocode-batch-positions-workflow.yml
+    name: Amazon Location Service Geocode Address into Tracker Position
+  - type: Arazzo
+    url: arazzo/amazon-location-service-map-inventory-audit-workflow.yml
+    name: Amazon Location Service Map Inventory Audit
+  - type: Arazzo
+    url: arazzo/amazon-location-service-map-lifecycle-workflow.yml
+    name: Amazon Location Service Map Lifecycle Teardown
+  - type: Arazzo
+    url: arazzo/amazon-location-service-provision-map-workflow.yml
+    name: Amazon Location Service Provision and Verify Map
+  - type: Arazzo
+    url: arazzo/amazon-location-service-provision-tracker-workflow.yml
+    name: Amazon Location Service Provision Tracker and Update Position
   - type: Portal
     url: https://aws.amazon.com/
   - type: Portal
@@ -107,7 +104,7 @@ common:
     url: https://github.com/aws
   - type: Console
     url: https://console.aws.amazon.com/location/
-  - type: SignUp
+  - type: Signup
     url: https://signin.aws.amazon.com/signup?request_type=register
   - type: Login
     url: https://aws.amazon.com/console/
