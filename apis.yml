@@ -57,6 +57,14 @@ apis:
       - type: JSONSchema
         url: json-schema/amazon-location-service-tracker-schema.json
 common:
+  - type: TrustCenter
+    url: security/amazon-location-service-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-location-service-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-location-service-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-location-service-authentication.yml
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-location-service/overview
   - type: Arazzo
