@@ -1,0 +1,14 @@
+{
+  "provider": "amazon-location-service",
+  "sources": [
+    "amazon-location-service-maps-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-location-service-maps-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
