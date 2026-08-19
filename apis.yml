@@ -2,6 +2,7 @@ name: Amazon Location Service
 description: >-
   Amazon Location Service provides location-based services including maps, places, routes, trackers, and geofences,
   enabling developers to add location functionality to applications securely and cost-effectively.
+specificationVersion: '0.23'
 accessModel:
   pricing: freemium
   onboarding: self-serve
