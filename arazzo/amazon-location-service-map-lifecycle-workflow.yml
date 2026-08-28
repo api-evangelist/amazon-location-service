@@ -11,8 +11,8 @@ info:
     the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: locationApi
-  url: ../openapi/amazon-location-service-openapi.yml
+- name: mapsApi
+  url: ../openapi/amazon-location-service-maps-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: map-lifecycle
