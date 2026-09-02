@@ -198,3 +198,5 @@ tags:
   - Location
   - Maps
   - Routing
+x-parent: aws
+x-relationship: product
