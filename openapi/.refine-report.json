@@ -1,7 +1,7 @@
 {
   "provider": "amazon-location-service",
   "sources": [
-    "amazon-location-service-maps-api-openapi.yml"
+    "_original/amazon-location-service-openapi.yml"
   ],
   "outputs": [
     "amazon-location-service-maps-api-openapi.yml"
@@ -10,7 +10,11 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-location-service-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-location-service-maps-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
