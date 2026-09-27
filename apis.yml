@@ -78,7 +78,7 @@ apis:
     url: json-schema/amazon-location-service-tracker-schema.json
 common:
 - type: Website
-  url: https://amazon.com
+  url: https://aws.amazon.com/location/
 - type: AgenticAccess
   url: agentic-access/amazon-location-service-agentic-access.yml
 - type: TrustCenter
@@ -201,5 +201,5 @@ tags:
 - Location
 - Maps
 - Routing
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
