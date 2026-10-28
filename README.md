@@ -1,4 +1,4 @@
-# Amazon Location Service (amazon-location-service)
+# Amazon Location Service
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,88 +66,188 @@
 
 Amazon Location Service provides location-based services including maps, places, routes, trackers, and geofences, enabling developers to add location functionality to applications securely and cost-effectively.
 
-**APIs.json:** [https://aws.amazon.com/location/](https://aws.amazon.com/location/)
+**Areas:** AWS · Geocoding · Geofencing · Location · Maps · Routing
 
-## Tags
+## Amazon Location Service on APIs.io
 
-- AWS
-- Geocoding
-- Geofencing
-- Location
-- Maps
-- Routing
+Everything profiled for Amazon Location Service is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-location-service/](https://apis.io/providers/amazon-location-service/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (9)
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-05-19
+- [Amazon Location Service Maps API](https://apis.io/apis/amazon-location-service/amazon-location-service-maps-api/) — Map resource management
+- [Amazon Location Service Location Service Geofencing API](https://apis.io/apis/amazon-location-service/amazon-location-service-geofencing-api/) — The Location Service Geofencing API from Amazon Location Service — 3 operation(s) for location service geofencing.
+- [Amazon Location Service Location Service Metadata API](https://apis.io/apis/amazon-location-service/amazon-location-service-metadata-api/) — The Location Service Metadata API from Amazon Location Service — 7 operation(s) for location service metadata.
+- [Amazon Location Service Location Service Operations API](https://apis.io/apis/amazon-location-service/amazon-location-service-operations-api/) — The Location Service Operations API from Amazon Location Service — 20 operation(s) for location service operations.
+- [Amazon Location Service Location Service Places API](https://apis.io/apis/amazon-location-service/amazon-location-service-places-api/) — The Location Service Places API from Amazon Location Service — 4 operation(s) for location service places.
+- [Amazon Location Service Location Service Positions API](https://apis.io/apis/amazon-location-service/amazon-location-service-positions-api/) — The Location Service Positions API from Amazon Location Service — 3 operation(s) for location service positions.
+- [Amazon Location Service Location Service Routes API](https://apis.io/apis/amazon-location-service/amazon-location-service-routes-api/) — The Location Service Routes API from Amazon Location Service — 3 operation(s) for location service routes.
+- [Amazon Location Service Location Service Tags API](https://apis.io/apis/amazon-location-service/amazon-location-service-tags-api/) — The Location Service Tags API from Amazon Location Service — 1 operation(s) for location service tags.
+- [Amazon Location Service Location Service Tracking API](https://apis.io/apis/amazon-location-service/amazon-location-service-tracking-api/) — The Location Service Tracking API from Amazon Location Service — 1 operation(s) for location service tracking.
 
-## APIs
+### Published properties
 
-### Amazon Location Service REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-RESTful API for Amazon Location Service operations including maps, places, routes, geofences, trackers, and device position management for location-aware applications.
+#### Arazzo workflows (9)
 
-- **Human URL:** [https://aws.amazon.com/location/](https://aws.amazon.com/location/)
-- **Base URL:** `https://geo.amazonaws.com`
+Multi-step workflows that chain operations into a business task.
 
-#### Tags
+- [Amazon Location Service Find or Create Map](https://apis.io/arazzos/amazon-location-service/amazon-location-service-find-or-create-map-workflow/)
+- [Amazon Location Service Find or Create Tracker and Report Position](https://apis.io/arazzos/amazon-location-service/amazon-location-service-find-or-create-tracker-workflow/)
+- [Amazon Location Service Fleet Onboarding](https://apis.io/arazzos/amazon-location-service/amazon-location-service-fleet-onboarding-workflow/)
+- [Amazon Location Service Geocode Address and Provision Map](https://apis.io/arazzos/amazon-location-service/amazon-location-service-geocode-and-map-workflow/)
+- [Amazon Location Service Geocode Address into Tracker Position](https://apis.io/arazzos/amazon-location-service/amazon-location-service-geocode-batch-positions-workflow/)
+- [Amazon Location Service Map Inventory Audit](https://apis.io/arazzos/amazon-location-service/amazon-location-service-map-inventory-audit-workflow/)
+- [Amazon Location Service Map Lifecycle Teardown](https://apis.io/arazzos/amazon-location-service/amazon-location-service-map-lifecycle-workflow/)
+- [Amazon Location Service Provision and Verify Map](https://apis.io/arazzos/amazon-location-service/amazon-location-service-provision-map-workflow/)
+- [Amazon Location Service Provision Tracker and Update Position](https://apis.io/arazzos/amazon-location-service/amazon-location-service-provision-tracker-workflow/)
 
-- AWS
-- Geofencing
-- Location
-- Maps
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.aws.amazon.com/location/latest/APIReference/)
-- [OpenAPI](openapi/amazon-location-service-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/amazon-location-service.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/amazon-location-service.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [OpenAPI](https://api.apis.guru/v2/specs/amazonaws.com/location/2020-11-19/openapi.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](json-schema/amazon-location-service-geofence-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/amazon-location-service-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Pricing](https://aws.amazon.com/location/pricing/)
-- [Getting Started](https://aws.amazon.com/location/getting-started/)
-- [Authentication](https://docs.aws.amazon.com/location/latest/APIReference/CommonParameters.html)
-- [S D Ks](https://aws.amazon.com/tools/)
-- [Status Page](https://status.aws.amazon.com/)
-- [F A Q](https://aws.amazon.com/location/faqs/)
-- [Service Level Agreement](https://aws.amazon.com/location/sla/)
-- [User  Guide](https://docs.aws.amazon.com/location/latest/developerguide/welcome.html)
-- [API Reference](https://docs.aws.amazon.com/location/latest/APIReference/Welcome.html)
-- [Code  Examples](https://docs.aws.amazon.com/location/latest/developerguide/samples.html)
-- [Security](https://docs.aws.amazon.com/location/latest/developerguide/security.html)
-- [JSON Schema](json-schema/amazon-location-service-map-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-location-service-tracker-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [Amazon Location Service Agentic Access](https://apis.io/agentic-access/amazon-location-service/amazon-location-service-agentic-access/)
 
-## Common Properties
+#### JSON Schema (3)
 
-- [Arazzo Workflows](arazzo/) — [Arazzo Specification](https://spec.openapis.org/arazzo/latest.html)
-- [Portal](https://aws.amazon.com/)
-- [Portal](https://aws.amazon.com/location/)
+The data models the API reads and writes.
+
+- [Amazon Location Service Geofence](https://apis.io/schemas/amazon-location-service/amazon-location-service-geofence/)
+- [MapResource](https://apis.io/schemas/amazon-location-service/amazon-location-service-map/)
+- [Tracker](https://apis.io/schemas/amazon-location-service/amazon-location-service-tracker/)
+
+#### JSON Structure (2)
+
+Data models expressed in JSON Structure.
+
+- [Amazon Location Service Map Structure](https://apis.io/json-structure/amazon-location-service/amazon-location-service-map-structure/)
+- [Amazon Location Service Tracker Structure](https://apis.io/json-structure/amazon-location-service/amazon-location-service-tracker-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Location Service Context](https://apis.io/jsonld/amazon-location-service/amazon-location-service-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Location Service Vocabulary](https://apis.io/vocabularies/amazon-location-service/amazon-location-service-vocabulary/)
+
+#### Examples (2)
+
+Example requests and responses.
+
+- [Amazon Location Service Map Example](https://apis.io/examples/amazon-location-service/amazon-location-service-map-example/)
+- [Amazon Location Service Tracker Example](https://apis.io/examples/amazon-location-service/amazon-location-service-tracker-example/)
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [Amazon Location Service API](https://apis.io/collections/amazon-location-service/open-amazon-location-service/)
+- [Amazon Location Service Maps API](https://apis.io/collections/amazon-location-service/open-amazon-location-service-maps-api/)
+- [Amazon Location Service API](https://apis.io/collections/amazon-location-service/postman-amazon-location-service/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Location Service — jsonschema rules](https://apis.io/rules/amazon-location-service/amazon-location-service-jsonschema-spectral-rules/)
+- [Amazon Location Service API Rules](https://apis.io/rules/amazon-location-service/amazon-location-service-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Location Service Authentication](https://apis.io/security/amazon-location-service/amazon-location-service-authentication/)
+- [Amazon Location Service Domain Security](https://apis.io/security/amazon-location-service/amazon-location-service-domain-security/)
+- [Amazon Location Service Trust Center](https://apis.io/security/amazon-location-service/amazon-location-service-trust-center/)
+- [Amazon Location Service Vulnerability Disclosure](https://apis.io/security/amazon-location-service/amazon-location-service-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Location Service Plans Pricing](https://apis.io/plans/amazon-location-service/amazon-location-service-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Location Service Rate Limits](https://apis.io/rate-limits/amazon-location-service/amazon-location-service-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Location Service Finops](https://apis.io/finops/amazon-location-service/amazon-location-service-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/location/)
 - [Documentation](https://docs.aws.amazon.com/location/)
-- [Terms of Service](https://aws.amazon.com/service-terms/)
-- [Privacy Policy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/mobile/)
-- [GitHub Organization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/location/)
-- [Sign Up](https://signin.aws.amazon.com/signup?request_type=register)
-- [Login](https://aws.amazon.com/console/)
-- [Status Page](https://health.aws.amazon.com/health/status)
-- [Knowledge  Center](https://repost.aws/knowledge-center)
-- [YouTube](https://www.youtube.com/user/AmazonWebServices)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/amazon-location-service)
-- [Contact](https://aws.amazon.com/contact-us/)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Spectral Rules](rules/amazon-location-service-spectral-rules.yml)
-- [Vocabulary](vocabulary/amazon-location-service-vocabulary.yaml)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
-**URL:** https://apievangelist.com
+**Kin Score 57.5** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 57.9 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 72.6 |
+| Access clarity | 53.9 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-location-service/](https://apis.io/providers/amazon-location-service/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Location Service: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-location-service/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
