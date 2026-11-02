@@ -43,7 +43,7 @@ plans:
   included_quota: 500,000 Map Tile requests; 20,000 Geocode/Search requests (Core); 10,000 Routes calculated;
     200,000 Positions written; 200,000 Positions evaluated — included monthly, for 3 months
 x-canonical:
-  generated: '2026-11-01'
+  generated: '2026-11-02'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
