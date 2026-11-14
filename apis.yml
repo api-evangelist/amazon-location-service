@@ -1,7 +1,8 @@
 name: Amazon Location Service
-description: Amazon Location Service provides location-based services including maps, places, routes,
-  trackers, and geofences, enabling developers to add location functionality to applications securely
-  and cost-effectively.
+
+description: Amazon Location Service provides location-based services including maps, places, routes, trackers, and geofences, enabling developers
+  to add location functionality to applications securely and cost-effectively.
+
 deliveryModel:
   model: saas
   open_source: false
@@ -14,7 +15,9 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 specificationVersion: '0.23'
+
 accessModel:
   pricing: freemium
   onboarding: self-serve
@@ -25,156 +28,99 @@ accessModel:
   gated_source:
   - onboarding
   label: Freemium · Self-serve signup
-  confidence: medium
+  confidence: high
   source:
   - plans
   - authentication
+  - rate-limits
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+
 url: https://aws.amazon.com/location/
+
 created: '2024-01-15'
+
 modified: '2026-09-16'
-apis:
-- aid: amazon-location-service:amazon-location-service-maps-api
-  name: Amazon Location Service Maps API
-  description: Map resource management
-  humanURL: https://aws.amazon.com/location/
-  baseURL: https://geo.amazonaws.com
-  tags:
-  - Maps
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-location-service-maps-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/location/latest/APIReference/
-  - type: JSONSchema
-    url: json-schema/amazon-location-service-geofence-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-location-service-context.jsonld
-  - type: Pricing
-    url: https://aws.amazon.com/location/pricing/
-  - type: GettingStarted
-    url: https://aws.amazon.com/location/getting-started/
-  - type: Authentication
-    url: https://docs.aws.amazon.com/location/latest/APIReference/CommonParameters.html
-  - type: SDKs
-    url: https://aws.amazon.com/tools/
-  - type: StatusPage
-    url: https://status.aws.amazon.com/
-  - type: FAQ
-    url: https://aws.amazon.com/location/faqs/
-  - type: ServiceLevelAgreement
-    url: https://aws.amazon.com/location/sla/
-  - type: User Guide
-    url: https://docs.aws.amazon.com/location/latest/developerguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/location/latest/APIReference/Welcome.html
-  - type: Code Examples
-    url: https://docs.aws.amazon.com/location/latest/developerguide/samples.html
-  - type: Security
-    url: https://docs.aws.amazon.com/location/latest/developerguide/security.html
-  - type: JSONSchema
-    url: json-schema/amazon-location-service-map-schema.json
-  - type: JSONSchema
-    url: json-schema/amazon-location-service-tracker-schema.json
-- aid: amazon-location-service:amazon-location-service-geofencing-api
-  name: Amazon Location Service Location Service Geofencing API
-  description: >-
-    The Location Service Geofencing API from Amazon Location Service — 3 operation(s) for location service
-    geofencing.
-  humanURL: https://aws.amazon.com/location/
-  baseURL: https://geo.amazonaws.com
-  tags:
-  - Location Service Geofencing
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-location-service-geofencing-api-openapi.yml
-- aid: amazon-location-service:amazon-location-service-metadata-api
-  name: Amazon Location Service Location Service Metadata API
-  description: >-
-    The Location Service Metadata API from Amazon Location Service — 7 operation(s) for location service
-    metadata.
-  humanURL: https://aws.amazon.com/location/
-  baseURL: https://geo.amazonaws.com
-  tags:
-  - Location Service Metadata
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-location-service-metadata-api-openapi.yml
-- aid: amazon-location-service:amazon-location-service-operations-api
-  name: Amazon Location Service Location Service Operations API
-  description: >-
-    The Location Service Operations API from Amazon Location Service — 20 operation(s) for location service
-    operations.
-  humanURL: https://aws.amazon.com/location/
-  baseURL: https://geo.amazonaws.com
-  tags:
-  - Location Service Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-location-service-operations-api-openapi.yml
-- aid: amazon-location-service:amazon-location-service-places-api
-  name: Amazon Location Service Location Service Places API
-  description: >-
-    The Location Service Places API from Amazon Location Service — 4 operation(s) for location service
-    places.
-  humanURL: https://aws.amazon.com/location/
-  baseURL: https://geo.amazonaws.com
-  tags:
-  - Location Service Places
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-location-service-places-api-openapi.yml
-- aid: amazon-location-service:amazon-location-service-positions-api
-  name: Amazon Location Service Location Service Positions API
-  description: >-
-    The Location Service Positions API from Amazon Location Service — 3 operation(s) for location service
-    positions.
-  humanURL: https://aws.amazon.com/location/
-  baseURL: https://geo.amazonaws.com
-  tags:
-  - Location Service Positions
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-location-service-positions-api-openapi.yml
-- aid: amazon-location-service:amazon-location-service-routes-api
-  name: Amazon Location Service Location Service Routes API
-  description: >-
-    The Location Service Routes API from Amazon Location Service — 3 operation(s) for location service
-    routes.
-  humanURL: https://aws.amazon.com/location/
-  baseURL: https://geo.amazonaws.com
-  tags:
-  - Location Service Routes
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-location-service-routes-api-openapi.yml
-- aid: amazon-location-service:amazon-location-service-tags-api
-  name: Amazon Location Service Location Service Tags API
-  description: >-
-    The Location Service Tags API from Amazon Location Service — 1 operation(s) for location service tags.
-  humanURL: https://aws.amazon.com/location/
-  baseURL: https://geo.amazonaws.com
-  tags:
-  - Location Service Tags
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-location-service-tags-api-openapi.yml
-- aid: amazon-location-service:amazon-location-service-tracking-api
-  name: Amazon Location Service Location Service Tracking API
-  description: >-
-    The Location Service Tracking API from Amazon Location Service — 1 operation(s) for location service
-    tracking.
-  humanURL: https://aws.amazon.com/location/
-  baseURL: https://geo.amazonaws.com
-  tags:
-  - Location Service Tracking
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-location-service-tracking-api-openapi.yml
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+  url: https://apievangelist.com
+
+tags:
+- Amazon Web Services
+- Geocoding
+- Geofencing
+- Location
+- Maps
+- Routing
+tags_raw:
+- AWS
+- Geocoding
+- Geofencing
+- Location
+- Maps
+- Routing
+
 common:
+- type: RateLimits
+  url: rate-limits/amazon-location-service-routes-rate-limits.yml
+- type: RateLimits
+  url: rate-limits/amazon-location-service-places-rate-limits.yml
+- type: Spectral
+  url: rules/amazon-location-service-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-location-service-rules.yml
+- type: Spectral
+  url: rules/amazon-location-service-jsonschema-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-location-service-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/amazon-location-service-data-model.yml
+- type: CLI
+  url: cli/amazon-location-service-cli.yml
+- type: ChangeLog
+  url: changelog/amazon-location-service-changelog.yml
+- type: Idempotency
+  url: conventions/amazon-location-service-conventions.yml
+- type: Conventions
+  url: conventions/amazon-location-service-conventions.yml
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: Lifecycle
+  url: lifecycle/amazon-location-service-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/amazon-location-service-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-location-service-conformance.yml
+- type: LLMsTxt
+  url: llms/amazon-location-service-llms.txt
+- type: ToolCrosswalk
+  url: mcp/amazon-location-service-tool-crosswalk.yml
+- type: MCPServer
+  url: mcp/amazon-location-service-mcp.yml
+- type: SecurityTxt
+  url: well-known/amazon-location-service-security.txt
+- type: SecurityTxt
+  url: well-known/amazon-location-service-repost-security.txt
+- type: WellKnown
+  url: well-known/amazon-location-service-well-known.yml
+- type: Hosts
+  url: hosts/amazon-location-service-hosts.yml
+- type: Vendors
+  url: vendors/amazon-location-service-vendors.yml
+- type: Packages
+  url: packages/amazon-location-service-packages.yml
+- type: Security
+  url: https://aws.amazon.com/security/?nc2=h_dsc_aa_sec
+- type: Newsroom
+  url: https://aws.amazon.com/media/?nc2=h_sol_ind_med
+- type: GettingStarted
+  url: https://developer.amazon.com/frustration-free-setup
 - type: CapabilityMap
   url: capabilities/amazon-location-service-capability-edges.yml
   name: Amazon Location Service Business Capability Map
@@ -297,23 +243,238 @@ common:
   url: rules/amazon-location-service-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/amazon-location-service-vocabulary.yaml
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-  url: https://apievangelist.com
-tags:
-- Amazon Web Services
-- Geocoding
-- Geofencing
-- Location
-- Maps
-- Routing
-tags_raw:
-- AWS
-- Geocoding
-- Geofencing
-- Location
-- Maps
-- Routing
+- type: UsageTerms
+  url: terms/amazon-location-service-terms-of-service.yml
+- type: DataProcessing
+  url: privacy/amazon-location-service-privacy-policy.yml
+- type: Attestations
+  url: compliance/amazon-location-service-compliance.yml
+
+apis:
+- aid: amazon-location-service:amazon-location-service-maps-api
+  name: Amazon Location Service Maps API
+  description: Map resource management
+  humanURL: https://aws.amazon.com/location/
+  baseURL: https://geo.amazonaws.com
+  tags:
+  - Maps
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-location-service-maps-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/location/latest/APIReference/
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-geofence-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-location-service-context.jsonld
+  - type: Pricing
+    url: https://aws.amazon.com/location/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/location/getting-started/
+  - type: Authentication
+    url: https://docs.aws.amazon.com/location/latest/APIReference/CommonParameters.html
+  - type: SDKs
+    url: https://aws.amazon.com/tools/
+  - type: StatusPage
+    url: https://status.aws.amazon.com/
+  - type: FAQ
+    url: https://aws.amazon.com/location/faqs/
+  - type: ServiceLevelAgreement
+    url: https://aws.amazon.com/location/sla/
+  - type: User Guide
+    url: https://docs.aws.amazon.com/location/latest/developerguide/welcome.html
+  - type: APIReference
+    url: https://docs.aws.amazon.com/location/latest/APIReference/Welcome.html
+  - type: Code Examples
+    url: https://docs.aws.amazon.com/location/latest/developerguide/samples.html
+  - type: Security
+    url: https://docs.aws.amazon.com/location/latest/developerguide/security.html
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-map-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-tracker-schema.json
+- aid: amazon-location-service:amazon-location-service-geofencing-api
+  name: Amazon Location Service Location Service Geofencing API
+  description: The Location Service Geofencing API from Amazon Location Service — 3 operation(s) for location service geofencing.
+  humanURL: https://aws.amazon.com/location/
+  baseURL: https://geo.amazonaws.com
+  tags:
+  - Location Service Geofencing
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-location-service-geofencing-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-describe-geofence-collection-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-create-geofence-collection-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-create-geofence-collection-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-update-geofence-collection-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-update-geofence-collection-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-list-geofence-collections-response-schema.json
+- aid: amazon-location-service:amazon-location-service-metadata-api
+  name: Amazon Location Service Location Service Metadata API
+  description: The Location Service Metadata API from Amazon Location Service — 7 operation(s) for location service metadata.
+  humanURL: https://aws.amazon.com/location/
+  baseURL: https://geo.amazonaws.com
+  tags:
+  - Location Service Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-location-service-metadata-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-create-key-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-get-job-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-describe-key-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-start-job-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-update-key-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-create-key-response-schema.json
+- aid: amazon-location-service:amazon-location-service-operations-api
+  name: Amazon Location Service Location Service Operations API
+  description: The Location Service Operations API from Amazon Location Service — 20 operation(s) for location service operations.
+  humanURL: https://aws.amazon.com/location/
+  baseURL: https://geo.amazonaws.com
+  tags:
+  - Location Service Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-location-service-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-get-static-map-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-get-style-descriptor-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-calculate-isolines-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-calculate-route-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-geocode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-calculate-route-matrix-request-schema.json
+- aid: amazon-location-service:amazon-location-service-places-api
+  name: Amazon Location Service Location Service Places API
+  description: The Location Service Places API from Amazon Location Service — 4 operation(s) for location service places.
+  humanURL: https://aws.amazon.com/location/
+  baseURL: https://geo.amazonaws.com
+  tags:
+  - Location Service Places
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-location-service-places-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-geo-places-get-place-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-geo-places-get-place-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-create-place-index-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-describe-place-index-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-get-place-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-update-place-index-response-schema.json
+- aid: amazon-location-service:amazon-location-service-positions-api
+  name: Amazon Location Service Location Service Positions API
+  description: The Location Service Positions API from Amazon Location Service — 3 operation(s) for location service positions.
+  humanURL: https://aws.amazon.com/location/
+  baseURL: https://geo.amazonaws.com
+  tags:
+  - Location Service Positions
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-location-service-positions-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-get-device-position-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-verify-device-position-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-batch-evaluate-geofences-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-verify-device-position-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-batch-update-device-position-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-batch-evaluate-geofences-response-schema.json
+- aid: amazon-location-service:amazon-location-service-routes-api
+  name: Amazon Location Service Location Service Routes API
+  description: The Location Service Routes API from Amazon Location Service — 3 operation(s) for location service routes.
+  humanURL: https://aws.amazon.com/location/
+  baseURL: https://geo.amazonaws.com
+  tags:
+  - Location Service Routes
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-location-service-routes-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-calculate-routes-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-create-route-calculator-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-describe-route-calculator-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-calculate-routes-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-create-route-calculator-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-update-route-calculator-response-schema.json
+- aid: amazon-location-service:amazon-location-service-tags-api
+  name: Amazon Location Service Location Service Tags API
+  description: The Location Service Tags API from Amazon Location Service — 1 operation(s) for location service tags.
+  humanURL: https://aws.amazon.com/location/
+  baseURL: https://geo.amazonaws.com
+  tags:
+  - Location Service Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-location-service-tags-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-tag-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-untag-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-list-tags-for-resource-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-list-tags-for-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-tag-resource-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-untag-resource-response-schema.json
+- aid: amazon-location-service:amazon-location-service-tracking-api
+  name: Amazon Location Service Location Service Tracking API
+  description: The Location Service Tracking API from Amazon Location Service — 1 operation(s) for location service tracking.
+  humanURL: https://aws.amazon.com/location/
+  baseURL: https://geo.amazonaws.com
+  tags:
+  - Location Service Tracking
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-location-service-tracking-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-create-tracker-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-describe-tracker-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-update-tracker-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-create-tracker-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-update-tracker-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-location-service-list-trackers-response-schema.json
+
 x-parent: amazon-web-services
+
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v6

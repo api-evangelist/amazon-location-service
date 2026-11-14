@@ -38,6 +38,18 @@ artifacts:
   capabilities/amazon-location-service-capability-edges.yml:
     method: unknown
     evidence: no authorship recorded
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
+  changelog/amazon-location-service-changelog.yml:
+    method: searched
+    evidence: declared in the artifact
+  cli/amazon-location-service-cli.yml:
+    method: searched
+    evidence: declared in the artifact
   collections/amazon-location-service-maps-api.opencollection.json:
     method: derived
     evidence: openapi/amazon-location-service-maps-api
@@ -50,6 +62,21 @@ artifacts:
   collections/amazon-location-service.postman_collection.json:
     method: derived
     evidence: openapi/amazon-location-service
+  compliance/amazon-location-service-compliance.yml:
+    method: harvested
+    evidence: declared in the artifact
+  conformance/amazon-location-service-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-location-service-conventions.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-model/amazon-location-service-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  errors/amazon-location-service-problem-types.yml:
+    method: searched
+    evidence: declared in the artifact
   examples/amazon-location-service-map-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -62,6 +89,9 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-location-service-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -71,13 +101,157 @@ artifacts:
   json-ld/amazon-location-service-context.jsonld:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-location-service-batch-evaluate-geofences-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-batch-evaluate-geofences-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-batch-update-device-position-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-calculate-isolines-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-calculate-route-matrix-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-calculate-route-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-calculate-routes-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-calculate-routes-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-create-geofence-collection-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-create-geofence-collection-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-create-key-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-create-key-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-create-place-index-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-create-route-calculator-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-create-route-calculator-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-create-tracker-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-create-tracker-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-describe-geofence-collection-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-describe-key-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-describe-place-index-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-describe-route-calculator-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-describe-tracker-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-geo-places-get-place-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-geo-places-get-place-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-geocode-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-location-service-geofence-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-get-device-position-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-get-job-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-get-place-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-get-static-map-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-get-style-descriptor-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-list-geofence-collections-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-list-tags-for-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-list-tags-for-resource-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-list-trackers-response-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-location-service-map-schema.json:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-location-service-start-job-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-tag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-tag-resource-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-location-service-tracker-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-untag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-untag-resource-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-update-geofence-collection-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-update-geofence-collection-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-update-key-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-update-place-index-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-update-route-calculator-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-update-tracker-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-update-tracker-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-verify-device-position-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-location-service-verify-device-position-response-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-structure/amazon-location-service-map-structure.json:
@@ -89,7 +263,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -158,10 +332,24 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-location-service-openapi.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  lifecycle/amazon-location-service-lifecycle.yml:
+    method: searched
+    evidence: declared in the artifact
+  llms/amazon-location-service-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-location-service-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-location-service-mcp.yml:
+    method: searched
+    evidence: declared in the artifact
+  mcp/amazon-location-service-tool-crosswalk.yml:
+    method: derived
+    evidence: declared in the artifact
   openapi/amazon-location-service-geofencing-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -189,6 +377,12 @@ artifacts:
   openapi/amazon-location-service-tracking-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
+  packages/amazon-location-service-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  patterns/amazon-location-service-patterns.yml:
+    method: derived
+    evidence: declared in the artifact
   plans/amazon-location-service-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -198,10 +392,22 @@ artifacts:
   postman/amazon-location-service.postman_collection.json:
     method: derived
     evidence: openapi/amazon-location-service
+  privacy/amazon-location-service-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
+  rate-limits/amazon-location-service-places-rate-limits.yml:
+    method: searched
+    evidence: declared in the artifact
   rate-limits/amazon-location-service-rate-limits.yml:
-    method: generated
+    method: searched
+    evidence: declared in the artifact
+  rate-limits/amazon-location-service-routes-rate-limits.yml:
+    method: searched
     evidence: declared in the artifact
   rules/amazon-location-service-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-location-service-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-location-service-spectral-rules.yml:
@@ -216,12 +422,55 @@ artifacts:
   security/amazon-location-service-vulnerability-disclosure.yml:
     method: searched
     evidence: declared in the artifact
+  skills/_index.yml:
+    method: generated
+    evidence: declared in the artifact
+  skills/amazon-location-service-geocode-and-route.md:
+    method: generated
+    evidence: declared in the artifact
+  skills/amazon-location-service-track-devices-with-geofences.md:
+    method: generated
+    evidence: declared in the artifact
   sla/amazon-location-service-sla.yml:
     method: searched
     evidence: declared in the artifact
+  smithy/geo-maps-2020-11-19.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/geo-maps/service/2020-11-19/geo-maps-2020-11-19.json
+      (sha256 c3428881be8d, fetched 2026-11-11T21:11:51+00:00)
+  smithy/geo-places-2020-11-19.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/geo-places/service/2020-11-19/geo-places-2020-11-19.json
+      (sha256 72b023f4323e, fetched 2026-11-11T21:11:54+00:00)
+  smithy/geo-routes-2020-11-19.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/geo-routes/service/2020-11-19/geo-routes-2020-11-19.json
+      (sha256 03a3dc02bd68, fetched 2026-11-11T21:12:03+00:00)
   smithy/location-2020-11-19.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/location/service/2020-11-19/location-2020-11-19.json
+      (sha256 bbc44224cd9e, fetched 2026-11-11T21:11:50+00:00)
+  terms/amazon-location-service-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-location-service-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-location-service-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-location-service-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-location-service-midway-auth-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-location-service-repost-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-location-service-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-location-service-well-known.yml:
     method: unknown
     evidence: no authorship recorded

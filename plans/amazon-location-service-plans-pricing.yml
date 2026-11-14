@@ -2,6 +2,7 @@
 generated: '2026-10-28'
 method: searched
 source: https://aws.amazon.com/location/pricing/
+name: Amazon Location Service API Plans
 sources:
 - https://aws.amazon.com/location/pricing/
 provenance:
@@ -43,7 +44,7 @@ plans:
   included_quota: 500,000 Map Tile requests; 20,000 Geocode/Search requests (Core); 10,000 Routes calculated;
     200,000 Positions written; 200,000 Positions evaluated — included monthly, for 3 months
 x-canonical:
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
